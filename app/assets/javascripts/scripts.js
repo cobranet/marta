@@ -20,7 +20,7 @@ function showPitanje(num){
 			    url:'/odgovor',
 			    type: 'GET',
 			    data: { odgovor: $('#odg').val(),
-				    pitanje: 1}
+				    pitanje: num}
 			} ).
 			done( function(data){
 			      alert(data.rez);
