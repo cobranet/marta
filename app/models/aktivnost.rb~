@@ -1,0 +1,2 @@
+class Aktivnost < ActiveRecord::Base
+end
