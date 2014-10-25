@@ -1,3 +1,38 @@
+function showBadAnswer(){
+    var $textAndPic = $('<div id="dialog-body"></div>');
+        $textAndPic.append("<h2>Razmislite ponovo o pitanju!</h2><br />");
+        $textAndPic.append('<%= image_tag "mojamarta.png", :id => "dlg-pic" %>');
+        BootstrapDialog.show({
+	    title: 'Pokušajte ponovo sutradan',
+	    message: $textAndPic,
+	    cssClass: 'pitdlg',
+		buttons: [{
+                    label: 'OK',
+		    cssClass: 'button  btn-lg',
+                    action: function(dialogRef){
+			dialogRef.close();
+                    }
+            }]});
+};
+
+function showGoodAnswer(){
+    var $textAndPic = $('<div id="dialog-body"></div>');
+        $textAndPic.append("<h2>Odličan odgovor! Ne govorite priljateljima ... ne kvarite zabavu </h2><br />");
+        $textAndPic.append('<%= image_tag "mojamarta.png", :id => "dlg-pic" %>');
+        BootstrapDialog.show({
+	    title: 'Bravo!!',
+	    message: $textAndPic,
+	    cssClass: 'pitdlg',
+		buttons: [{
+                    label: 'OK',
+		    cssClass: 'button  btn-lg',
+                    action: function(dialogRef){
+			dialogRef.close();
+                    }
+            }]});
+};
+
+       
 function showPitanje(num){
     $.ajax({
 	url: '/pitanjas/' + num,
@@ -26,7 +61,12 @@ function showPitanje(num){
 				    pitanje: num}
 			} ).
 			done( function(data){
-			      alert(data.rez);
+			      if (data.rez === 'not ok'){
+				  showBadAnswer();
+			      } else {
+				  showGoodAnswer();
+			      }
+				  
 		    });
                     dialogRef.close();
                     }
