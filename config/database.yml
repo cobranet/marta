@@ -56,8 +56,5 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  database: upetrovic_production
   pool: 5
-  username: upetrovic
-  password: 22003bpm
+
