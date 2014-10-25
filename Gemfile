@@ -46,3 +46,4 @@ end
 
 gem 'omniauth-facebook'
 gem 'thin'
+gem 'rails_12factor', group: :production
