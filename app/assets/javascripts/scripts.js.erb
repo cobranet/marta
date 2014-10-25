@@ -10,6 +10,9 @@ function showPitanje(num){
 	    $textAndPic.append('<input id="odg" class="pitanjecl form-control" type="text" name="odgovor">');
 	    BootstrapDialog.show({
 		title: 'Zagonetka',
+		onshown: function(dialogRef){
+		    $('#odg').focus();
+		  },  
 		message: $textAndPic,
 		cssClass: 'pitdlg',
 		buttons: [{

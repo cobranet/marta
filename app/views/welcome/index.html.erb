@@ -40,19 +40,17 @@
 	      <div></div>
               <p>  <div id="login">
       <% if current_user %>
-
         <%= link_to "Sign out", signout_path %><br/>
-	<h3><%= "Zdravo #{current_user.name}," %> &nbsp <br/> 
+  	<h3><%= "Zdravo #{current_user.name}," %> &nbsp <br/> 
 	probaj da odgovoriš na
-
-        </br>
-	      <button id="marta" class="btn lg">Martino pitanje</button>
-	      <button id="klara" class="btn lg">Klarino  pitanje</button>
-          
+        <div>
+	      <button id="marta" class="btn-lg">Martino pitanje</button>
+	      <button id="klara" class="btn-lg">Klarino  pitanje</button>
+        </div>  
            
 
       <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+      <%= button_to "Sign in with Facebook", "/auth/facebook",:class => "btn-lg btn-default mbtn"  %>
       <%end%>
     </div>  </p>
             </div>
@@ -395,6 +393,6 @@
    </div>
   </div>
 </div>
-		<script src="assets/scripts.js"></script>
+
 	</body>
 </html>

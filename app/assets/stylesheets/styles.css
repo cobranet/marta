@@ -55,6 +55,7 @@ body {
 }
 
 .carousel-caption h2 {
+
     font-size: 5.0vmax;
     font-family: 'lansbury';
     src:  font-url('../fonts/lansbury.ttf') format('truetype'); 
@@ -114,12 +115,12 @@ h1 {
   font-size:100px;
   font-family: 'lansbury';
   src:  font-url('../fonts/lansbury.ttf') format('truetype'); 
-
+  
 
   position:absolute;
   z-index:1200;
   color:red;
-  top:70px;
+  top:90px;
   text-align:center;
   width:100%;
 }
@@ -263,14 +264,6 @@ section {
     width: auto;
 }
 
-.pitdlg {
-     background-image: url('mojamarta.png');
-}
-
-#dialog-body {
-     background-image: url('mojamarta.png');
-}
-
 .form-control {
   padding: 10px;  
   -webkit-border-radius: 4;
@@ -281,4 +274,8 @@ section {
 #glavninaslov {
     color: red; 
     height: 50px;
+}
+
+.mbtn {
+    padding: 20px;
 }
