@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
     odgovor = params[:odgovor]
     
     if Odgovor.where(pitanje_id: pitanje,odgovor: odgovor).length == 0
-      rez = 'not ok uopste'
+      rez = 'not ok'
     else
       rez = 'ok'
     end
