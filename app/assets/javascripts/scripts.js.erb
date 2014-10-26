@@ -61,6 +61,7 @@ function showPitanje(num){
 				    pitanje: num}
 			} ).
 			done( function(data){
+			      $('#poruka').text(data.poruka);
 			      if (data.rez === 'not ok'){
 				  showBadAnswer();
 			      } else {

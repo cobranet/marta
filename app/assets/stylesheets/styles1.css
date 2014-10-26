@@ -1,0 +1,58 @@
+@font-face {
+    font-family: lansbury;
+    src: url(/fonts/lansbury.ttf); 
+}
+
+.bnaslov h2 {
+    font-size: 5.0vmax;
+    font-family: 'lansbury';
+    src:  font-url('../fonts/lansbury.ttf') format('truetype');
+    text-align: center;
+    color: red;
+}
+
+
+.row {
+    text-align: center;
+}
+
+
+.zdravo {
+    color: white;
+}
+
+.main {
+    background: url('konfrotacija.jpg') no-repeat center center; 
+    min-height: 600px;
+    
+}
+
+
+#seprow1 {
+    min-height: 3.0vmax;
+}
+
+#seprow2 {
+    min-height: 3.0vmax;
+}
+
+#dlg-pic {
+    max-height: 300px;
+    max-width: auto;
+}
+
+@media (max-width: 979px) {
+
+    .main {
+       background: url('konfrotacija.jpg') no-repeat center center; 
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .main {
+       background: url('konfrotacija.jpg') no-repeat center center; 
+    }
+
+}
