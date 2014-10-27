@@ -1,0 +1,11 @@
+<div id="pametni1" class="row pametni"> 
+  <% if current_user && current_user.tacno(1) != nil   %>
+    <%= current_user.tacno(1) %>
+  <% end  %>
+</div>
+
+<div id="pametni2" class="row pametni"> 
+  <% if current_user && current_user.tacno(2) != nil   %>
+    <%= current_user.tacno(2) %>
+  <% end  %>
+</div>
