@@ -62,7 +62,7 @@
 
 @media (max-width:480px) {
     .main {
-      background: url('naslovna.jpg') no-repeat center center; 
+	background: url('naslovna.jpg') no-repeat center center; 
     }
 
 }
