@@ -47,23 +47,25 @@
 
 .martabutton {
       background: url('button_back.png') no-repeat center center;  
+      padding-top: 10px;
+      padding-bottom: 10px;
 }
 
 .bquest {
     padding: 3px;
 }
 
-@media (min-width: 800px) {
+/* @media (min-width: 800px) { */
 
-    .main {
-       background: url('konfrotacija.jpg') no-repeat center center; 
-    }
-}
+/*     .main { */
+/*        background: url('konfrotacija.jpg') no-repeat center center;  */
+/*     } */
+/* } */
 
-@media (max-width:480px) {
-    .main {
-	background: url('naslovna.jpg') no-repeat center center; 
-    }
+/* @media (max-width:480px) { */
+/*     .main { */
+/* 	background: url('naslovna.jpg') no-repeat center center;  */
+/*     } */
 
-}
+/* } */
 
