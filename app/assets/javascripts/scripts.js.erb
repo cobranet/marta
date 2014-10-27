@@ -60,8 +60,18 @@ function showPitanje(num){
 			    data: { odgovor: $('#odg').val(),
 				    pitanje: num}
 			} ).
-			done( function(data){
+			    done( function(data){
 			      $('#poruka').text(data.poruka);
+			      if (data.pitanje == 1 && data.rez === 'ok'){
+				  $('#pametni1').text(data.tacno);
+				  $('#marta').hide();
+				  
+			      }
+			      if (data.pitanje == 2 && data.rez === 'ok'){
+				  $('#pametni2').text(data.tacno);
+				  $('#klara').hide();
+			      }
+				
 			      if (data.rez === 'not ok'){
 				  showBadAnswer();
 			      } else {

@@ -17,16 +17,20 @@
 }
 
 
-.zdravo {
+.zdravo h3 {
     color: white;
+    font-size: 3.0vmax;
 }
 
 .main {
-    background: url('konfrotacija.jpg') no-repeat center center; 
+
     min-height: 600px;
     
 }
 
+.pametni {
+    color: white;
+}
 
 #seprow1 {
     min-height: 3.0vmax;
@@ -41,18 +45,16 @@
     max-width: auto;
 }
 
-@media (max-width: 979px) {
+@media (min-width: 800px) {
 
     .main {
        background: url('konfrotacija.jpg') no-repeat center center; 
     }
-
 }
 
-@media (max-width: 767px) {
-
+@media (min-width: 100px) {
     .main {
-       background: url('konfrotacija.jpg') no-repeat center center; 
+      background: url('konfrotacija.jpg') no-repeat center center; 
     }
 
 }

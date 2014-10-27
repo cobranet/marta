@@ -1,0 +1,1178 @@
+
+2.1.0 :003 >   quit
+cobranet@ubuntu:~/develop/rails/marta$ rails c
+Loading development environment (Rails 4.0.3)
+2.1.0 :001 > Odgovori.all
+NameError: uninitialized constant Odgovori
+	from (irb):1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :002 > Odgovor.all
+  Odgovor Load (1.9ms)  SELECT "odgovors".* FROM "odgovors"
+ => #<ActiveRecord::Relation [#<Odgovor id: 1, pitanje_id: 1, odgovor: "12", created_at: "2014-10-24 13:19:01", updated_at: "2014-10-24 13:19:01">, #<Odgovor id: 2, pitanje_id: 1, odgovor: "dvanest", created_at: "2014-10-24 13:19:01", updated_at: "2014-10-24 13:19:01">, #<Odgovor id: 3, pitanje_id: 2, odgovor: "mene", created_at: "2014-10-24 13:19:01", updated_at: "2014-10-24 13:19:01">, #<Odgovor id: 4, pitanje_id: 2, odgovor: "nikoga", created_at: "2014-10-24 13:19:01", updated_at: "2014-10-24 13:19:01">]> 
+2.1.0 :003 > Aktivnost.where(pitanje_id: 2).all
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):3)
+  Aktivnost Load (102.6ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."pitanje_id" = 2
+PG::UndefinedColumn: ERROR:  column aktivnosts.pitanje_id does not exist
+LINE 1: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"....
+                                                       ^
+: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"."pitanje_id" = 2
+ActiveRecord::StatementInvalid: PG::UndefinedColumn: ERROR:  column aktivnosts.pitanje_id does not exist
+LINE 1: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"....
+                                                       ^
+: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"."pitanje_id" = 2
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:168:in `all'
+	from (irb):3
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :004 > Aktivnost.where(pitanje: 2).all
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):4)
+  Aktivnost Load (1.5ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."pitanje" = 2
+ => [] 
+2.1.0 :005 > Aktivnost.all
+  Aktivnost Load (1.0ms)  SELECT "aktivnosts".* FROM "aktivnosts"
+ => #<ActiveRecord::Relation [#<Aktivnost id: 1, user_id: 1, pitanje: 1, odgovor: "44", rez: "not ok", kad: "2014-10-24 13:44:17", created_at: "2014-10-24 13:44:17", updated_at: "2014-10-24 13:44:17">, #<Aktivnost id: 2, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-24 13:47:18", created_at: "2014-10-24 13:47:18", updated_at: "2014-10-24 13:47:18">, #<Aktivnost id: 3, user_id: 1, pitanje: 1, odgovor: "34423", rez: "not ok", kad: "2014-10-24 13:49:50", created_at: "2014-10-24 13:49:50", updated_at: "2014-10-24 13:49:50">, #<Aktivnost id: 4, user_id: 1, pitanje: 1, odgovor: "shfg ghk sdhgsdkhg f", rez: "not ok", kad: "2014-10-24 13:55:52", created_at: "2014-10-24 13:55:52", updated_at: "2014-10-24 13:55:52">, #<Aktivnost id: 5, user_id: 1, pitanje: 1, odgovor: "rkwrkhwekrw hrw", rez: "not ok", kad: "2014-10-24 13:56:02", created_at: "2014-10-24 13:56:02", updated_at: "2014-10-24 13:56:02">, #<Aktivnost id: 6, user_id: 1, pitanje: 1, odgovor: "fashd fkashf fkasj ffh asfhaf ", rez: "not ok", kad: "2014-10-24 13:58:41", created_at: "2014-10-24 13:58:41", updated_at: "2014-10-24 13:58:41">, #<Aktivnost id: 7, user_id: 1, pitanje: 1, odgovor: "34243245h324kj32h", rez: "not ok", kad: "2014-10-24 14:03:15", created_at: "2014-10-24 14:03:15", updated_at: "2014-10-24 14:03:15">, #<Aktivnost id: 8, user_id: 1, pitanje: 1, odgovor: "mene", rez: "not ok", kad: "2014-10-24 14:03:26", created_at: "2014-10-24 14:03:26", updated_at: "2014-10-24 14:03:26">, #<Aktivnost id: 9, user_id: 1, pitanje: 1, odgovor: "nikoga", rez: "not ok", kad: "2014-10-24 14:09:31", created_at: "2014-10-24 14:09:31", updated_at: "2014-10-24 14:09:31">]> 
+2.1.0 :006 > Aktivnost.where(user_id: 1)
+  Aktivnost Load (207.1ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1
+ => #<ActiveRecord::Relation [#<Aktivnost id: 1, user_id: 1, pitanje: 1, odgovor: "44", rez: "not ok", kad: "2014-10-24 13:44:17", created_at: "2014-10-24 13:44:17", updated_at: "2014-10-24 13:44:17">, #<Aktivnost id: 2, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-24 13:47:18", created_at: "2014-10-24 13:47:18", updated_at: "2014-10-24 13:47:18">, #<Aktivnost id: 3, user_id: 1, pitanje: 1, odgovor: "34423", rez: "not ok", kad: "2014-10-24 13:49:50", created_at: "2014-10-24 13:49:50", updated_at: "2014-10-24 13:49:50">, #<Aktivnost id: 4, user_id: 1, pitanje: 1, odgovor: "shfg ghk sdhgsdkhg f", rez: "not ok", kad: "2014-10-24 13:55:52", created_at: "2014-10-24 13:55:52", updated_at: "2014-10-24 13:55:52">, #<Aktivnost id: 5, user_id: 1, pitanje: 1, odgovor: "rkwrkhwekrw hrw", rez: "not ok", kad: "2014-10-24 13:56:02", created_at: "2014-10-24 13:56:02", updated_at: "2014-10-24 13:56:02">, #<Aktivnost id: 6, user_id: 1, pitanje: 1, odgovor: "fashd fkashf fkasj ffh asfhaf ", rez: "not ok", kad: "2014-10-24 13:58:41", created_at: "2014-10-24 13:58:41", updated_at: "2014-10-24 13:58:41">, #<Aktivnost id: 7, user_id: 1, pitanje: 1, odgovor: "34243245h324kj32h", rez: "not ok", kad: "2014-10-24 14:03:15", created_at: "2014-10-24 14:03:15", updated_at: "2014-10-24 14:03:15">, #<Aktivnost id: 8, user_id: 1, pitanje: 1, odgovor: "mene", rez: "not ok", kad: "2014-10-24 14:03:26", created_at: "2014-10-24 14:03:26", updated_at: "2014-10-24 14:03:26">, #<Aktivnost id: 9, user_id: 1, pitanje: 1, odgovor: "nikoga", rez: "not ok", kad: "2014-10-24 14:09:31", created_at: "2014-10-24 14:09:31", updated_at: "2014-10-24 14:09:31">, #<Aktivnost id: 10, user_id: 1, pitanje: 1, odgovor: "234432", rez: "not ok", kad: "2014-10-24 14:12:41", created_at: "2014-10-24 14:12:41", updated_at: "2014-10-24 14:12:41">, ...]> 
+2.1.0 :007 > Aktivnost.where(user_id: 1).order("kad")
+  Aktivnost Load (140.6ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY kad
+ => #<ActiveRecord::Relation [#<Aktivnost id: 1, user_id: 1, pitanje: 1, odgovor: "44", rez: "not ok", kad: "2014-10-24 13:44:17", created_at: "2014-10-24 13:44:17", updated_at: "2014-10-24 13:44:17">, #<Aktivnost id: 2, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-24 13:47:18", created_at: "2014-10-24 13:47:18", updated_at: "2014-10-24 13:47:18">, #<Aktivnost id: 3, user_id: 1, pitanje: 1, odgovor: "34423", rez: "not ok", kad: "2014-10-24 13:49:50", created_at: "2014-10-24 13:49:50", updated_at: "2014-10-24 13:49:50">, #<Aktivnost id: 4, user_id: 1, pitanje: 1, odgovor: "shfg ghk sdhgsdkhg f", rez: "not ok", kad: "2014-10-24 13:55:52", created_at: "2014-10-24 13:55:52", updated_at: "2014-10-24 13:55:52">, #<Aktivnost id: 5, user_id: 1, pitanje: 1, odgovor: "rkwrkhwekrw hrw", rez: "not ok", kad: "2014-10-24 13:56:02", created_at: "2014-10-24 13:56:02", updated_at: "2014-10-24 13:56:02">, #<Aktivnost id: 6, user_id: 1, pitanje: 1, odgovor: "fashd fkashf fkasj ffh asfhaf ", rez: "not ok", kad: "2014-10-24 13:58:41", created_at: "2014-10-24 13:58:41", updated_at: "2014-10-24 13:58:41">, #<Aktivnost id: 7, user_id: 1, pitanje: 1, odgovor: "34243245h324kj32h", rez: "not ok", kad: "2014-10-24 14:03:15", created_at: "2014-10-24 14:03:15", updated_at: "2014-10-24 14:03:15">, #<Aktivnost id: 8, user_id: 1, pitanje: 1, odgovor: "mene", rez: "not ok", kad: "2014-10-24 14:03:26", created_at: "2014-10-24 14:03:26", updated_at: "2014-10-24 14:03:26">, #<Aktivnost id: 9, user_id: 1, pitanje: 1, odgovor: "nikoga", rez: "not ok", kad: "2014-10-24 14:09:31", created_at: "2014-10-24 14:09:31", updated_at: "2014-10-24 14:09:31">, #<Aktivnost id: 10, user_id: 1, pitanje: 1, odgovor: "234432", rez: "not ok", kad: "2014-10-24 14:12:41", created_at: "2014-10-24 14:12:41", updated_at: "2014-10-24 14:12:41">, ...]> 
+2.1.0 :008 > Aktivnost.where(user_id: 1).order("kad".:desc)
+SyntaxError: (irb):8: syntax error, unexpected tSYMBEG, expecting '('
+Aktivnost.where(user_id: 1).order("kad".:desc)
+                                         ^
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :009 > Aktivnost.where(user_id: 1).order("kad",:desc)
+  Aktivnost Load (95.3ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY kad, "aktivnosts"."desc" ASC
+PG::UndefinedColumn: ERROR:  column aktivnosts.desc does not exist
+LINE 1: ...  WHERE "aktivnosts"."user_id" = 1  ORDER BY kad, "aktivnost...
+                                                             ^
+: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"."user_id" = 1  ORDER BY kad, "aktivnosts"."desc" ASC
+ActiveRecord::StatementInvalid: PG::UndefinedColumn: ERROR:  column aktivnosts.desc does not exist
+LINE 1: ...  WHERE "aktivnosts"."user_id" = 1  ORDER BY kad, "aktivnost...
+                                                             ^
+: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"."user_id" = 1  ORDER BY kad, "aktivnosts"."desc" ASC
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :010 > Aktivnost.where(user_id: 1).order(:kad,:desc)
+  Aktivnost Load (2.0ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" ASC, "aktivnosts"."desc" ASC
+PG::UndefinedColumn: ERROR:  column aktivnosts.desc does not exist
+LINE 1: ..."."user_id" = 1  ORDER BY "aktivnosts"."kad" ASC, "aktivnost...
+                                                             ^
+: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"."user_id" = 1  ORDER BY "aktivnosts"."kad" ASC, "aktivnosts"."desc" ASC
+ActiveRecord::StatementInvalid: PG::UndefinedColumn: ERROR:  column aktivnosts.desc does not exist
+LINE 1: ..."."user_id" = 1  ORDER BY "aktivnosts"."kad" ASC, "aktivnost...
+                                                             ^
+: SELECT "aktivnosts".* FROM "aktivnosts"  WHERE "aktivnosts"."user_id" = 1  ORDER BY "aktivnosts"."kad" ASC, "aktivnosts"."desc" ASC
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :011 > Aktivnost.where(user_id: 1).order(kad: :desc)
+  Aktivnost Load (153.8ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC
+ => #<ActiveRecord::Relation [#<Aktivnost id: 84, user_id: 1, pitanje: 1, odgovor: "22", rez: "not ok", kad: "2014-10-26 09:02:14", created_at: "2014-10-26 09:02:14", updated_at: "2014-10-26 09:02:14">, #<Aktivnost id: 83, user_id: 1, pitanje: 1, odgovor: "", rez: "not ok", kad: "2014-10-26 09:01:26", created_at: "2014-10-26 09:01:26", updated_at: "2014-10-26 09:01:26">, #<Aktivnost id: 82, user_id: 1, pitanje: 1, odgovor: "", rez: "not ok", kad: "2014-10-26 09:00:14", created_at: "2014-10-26 09:00:14", updated_at: "2014-10-26 09:00:14">, #<Aktivnost id: 81, user_id: 1, pitanje: 2, odgovor: "", rez: "not ok", kad: "2014-10-26 09:00:08", created_at: "2014-10-26 09:00:08", updated_at: "2014-10-26 09:00:08">, #<Aktivnost id: 80, user_id: 1, pitanje: 1, odgovor: "", rez: "not ok", kad: "2014-10-26 09:00:03", created_at: "2014-10-26 09:00:03", updated_at: "2014-10-26 09:00:03">, #<Aktivnost id: 79, user_id: 1, pitanje: 1, odgovor: "244", rez: "not ok", kad: "2014-10-26 08:58:30", created_at: "2014-10-26 08:58:30", updated_at: "2014-10-26 08:58:30">, #<Aktivnost id: 78, user_id: 1, pitanje: 1, odgovor: "44", rez: "not ok", kad: "2014-10-26 08:55:42", created_at: "2014-10-26 08:55:42", updated_at: "2014-10-26 08:55:42">, #<Aktivnost id: 77, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 08:21:47", created_at: "2014-10-26 08:21:47", updated_at: "2014-10-26 08:21:47">, #<Aktivnost id: 76, user_id: 1, pitanje: 1, odgovor: "555", rez: "not ok", kad: "2014-10-26 08:16:26", created_at: "2014-10-26 08:16:26", updated_at: "2014-10-26 08:16:26">, #<Aktivnost id: 75, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 08:16:19", created_at: "2014-10-26 08:16:19", updated_at: "2014-10-26 08:16:19">, ...]> 
+2.1.0 :012 > 
+  Aktivnost Load (15.3ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC LIMIT 1
+ => #<Aktivnost id: 84, user_id: 1, pitanje: 1, odgovor: "22", rez: "not ok", kad: "2014-10-26 09:02:14", created_at: "2014-10-26 09:02:14", updated_at: "2014-10-26 09:02:14"> 
+2.1.0 :013 > reload!
+Reloading...
+ => true 
+2.1.0 :014 > User.poruka(1)
+/home/cobranet/develop/rails/marta/app/models/user.rb:17: warning: found = in conditional, should be ==
+NoMethodError: undefined method `id' for 1:Fixnum
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:16:in `poruka'
+	from (irb):14
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :015 > reload!
+Reloading...
+ => true 
+2.1.0 :016 > User.poruka(1)
+NoMethodError: undefined method `id' for 1:Fixnum
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:16:in `poruka'
+	from (irb):16
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :017 > u = User.find(1)
+  User Load (251.9ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAIIgCZCZAiZCtbfI59eLZAGV5gCF7jExxhfPd...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 08:55:26", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :018 > User.poruka(user)
+NameError: undefined local variable or method `user' for main:Object
+	from (irb):18
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :019 > User.poruka(u)
+  Aktivnost Load (1.2ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC LIMIT 1
+ => "Zdravo Bratislav Petrovic. Zadnji pokušaj je bio 2014-10-26 09:02:14 UTC ... rekli ste 22... " 
+2.1.0 :020 > reoload!
+NoMethodError: undefined method `reoload!' for main:Object
+	from (irb):20
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :021 > reload!
+Reloading...
+ => true 
+2.1.0 :022 > u = User.find(1)
+  User Load (3.9ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAIIgCZCZAiZCtbfI59eLZAGV5gCF7jExxhfPd...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 08:55:26", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :023 > u.poruka
+  Aktivnost Load (5.3ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC LIMIT 1
+NameError: undefined local variable or method `user' for #<User:0x00000004b53e08>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activemodel-4.0.3/lib/active_model/attribute_methods.rb:439:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/attribute_methods.rb:155:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:20:in `poruka'
+	from (irb):23
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :024 > reload!
+Reloading...
+ => true 
+2.1.0 :025 > u = User.find(1)
+  User Load (7.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAIIgCZCZAiZCtbfI59eLZAGV5gCF7jExxhfPd...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 08:55:26", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :026 > u.poruka
+  Aktivnost Load (0.7ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC LIMIT 1
+NoMethodError: undefined method `clsss' for Sun, 26 Oct 2014 09:02:14 UTC +00:00:Time
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/time_with_zone.rb:364:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:20:in `poruka'
+	from (irb):26
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :027 > reload!
+Reloading...
+ => true 
+2.1.0 :028 > u = User.find(1)
+  User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAIIgCZCZAiZCtbfI59eLZAGV5gCF7jExxhfPd...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 08:55:26", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :029 > u.poruka
+  Aktivnost Load (6.7ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC LIMIT 1
+ => "Zdravo Bratislav Petrovic. Zadnji pokušaj je bio 26 10 14 ... rekli ste 22..." 
+2.1.0 :030 > reload!
+Reloading...
+ => true 
+2.1.0 :031 > u = User.find(1)
+  User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAIIgCZCZAiZCtbfI59eLZAGV5gCF7jExxhfPd...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 08:55:26", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :032 > u.poruka
+  Aktivnost Load (1.3ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC LIMIT 1
+ => "Zdravo Bratislav Petrovic. Zadnji pokušaj je bio 26/10/2014 ... rekli ste 22..." 
+2.1.0 :033 > Activnos.where(user_id: 1).count
+NameError: uninitialized constant Activnos
+	from (irb):33
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :034 > Aktivnost.where(user_id: 1).count
+   (5.7ms)  SELECT COUNT(*) FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1
+ => 86 
+2.1.0 :035 > reload!
+Reloading...
+ => true 
+2.1.0 :036 > u = User.find(1)
+  User Load (0.5ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAGHZAyyhDOxr4My2odzlV931dZAYI29YIm5Cr...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 09:21:58", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :037 > u.poruka
+  Aktivnost Load (1.3ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 ORDER BY "aktivnosts"."kad" DESC LIMIT 1
+   (0.8ms)  SELECT COUNT(*) FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1
+ => "Zdravo Bratislav Petrovic. Zadnji pokušaj je bio 26/10/2014 ...na  Martino  pitanje  rekli ste ...Probali ste 86 puta. " 
+2.1.0 :038 > Activnost.where(user_id: 1, pitanje: 1)
+NameError: uninitialized constant Activnost
+	from (irb):38
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :039 > Aktivnost.where(user_id: 1, pitanje: 1)
+  Aktivnost Load (6.6ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."pitanje" = 1
+ => #<ActiveRecord::Relation [#<Aktivnost id: 1, user_id: 1, pitanje: 1, odgovor: "44", rez: "not ok", kad: "2014-10-24 13:44:17", created_at: "2014-10-24 13:44:17", updated_at: "2014-10-24 13:44:17">, #<Aktivnost id: 2, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-24 13:47:18", created_at: "2014-10-24 13:47:18", updated_at: "2014-10-24 13:47:18">, #<Aktivnost id: 3, user_id: 1, pitanje: 1, odgovor: "34423", rez: "not ok", kad: "2014-10-24 13:49:50", created_at: "2014-10-24 13:49:50", updated_at: "2014-10-24 13:49:50">, #<Aktivnost id: 4, user_id: 1, pitanje: 1, odgovor: "shfg ghk sdhgsdkhg f", rez: "not ok", kad: "2014-10-24 13:55:52", created_at: "2014-10-24 13:55:52", updated_at: "2014-10-24 13:55:52">, #<Aktivnost id: 5, user_id: 1, pitanje: 1, odgovor: "rkwrkhwekrw hrw", rez: "not ok", kad: "2014-10-24 13:56:02", created_at: "2014-10-24 13:56:02", updated_at: "2014-10-24 13:56:02">, #<Aktivnost id: 6, user_id: 1, pitanje: 1, odgovor: "fashd fkashf fkasj ffh asfhaf ", rez: "not ok", kad: "2014-10-24 13:58:41", created_at: "2014-10-24 13:58:41", updated_at: "2014-10-24 13:58:41">, #<Aktivnost id: 7, user_id: 1, pitanje: 1, odgovor: "34243245h324kj32h", rez: "not ok", kad: "2014-10-24 14:03:15", created_at: "2014-10-24 14:03:15", updated_at: "2014-10-24 14:03:15">, #<Aktivnost id: 8, user_id: 1, pitanje: 1, odgovor: "mene", rez: "not ok", kad: "2014-10-24 14:03:26", created_at: "2014-10-24 14:03:26", updated_at: "2014-10-24 14:03:26">, #<Aktivnost id: 9, user_id: 1, pitanje: 1, odgovor: "nikoga", rez: "not ok", kad: "2014-10-24 14:09:31", created_at: "2014-10-24 14:09:31", updated_at: "2014-10-24 14:09:31">, #<Aktivnost id: 10, user_id: 1, pitanje: 1, odgovor: "234432", rez: "not ok", kad: "2014-10-24 14:12:41", created_at: "2014-10-24 14:12:41", updated_at: "2014-10-24 14:12:41">, ...]> 
+2.1.0 :040 > Aktivnost.where(user_id: 1, pitanje: 1,rez: 'ok')
+  Aktivnost Load (60.5ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."pitanje" = 1 AND "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: 2, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-24 13:47:18", created_at: "2014-10-24 13:47:18", updated_at: "2014-10-24 13:47:18">, #<Aktivnost id: 54, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-25 07:48:02", created_at: "2014-10-25 07:48:02", updated_at: "2014-10-25 07:48:02">, #<Aktivnost id: 56, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-25 07:51:45", created_at: "2014-10-25 07:51:45", updated_at: "2014-10-25 07:51:45">, #<Aktivnost id: 59, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-25 07:54:49", created_at: "2014-10-25 07:54:49", updated_at: "2014-10-25 07:54:49">, #<Aktivnost id: 61, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-25 07:55:38", created_at: "2014-10-25 07:55:38", updated_at: "2014-10-25 07:55:38">, #<Aktivnost id: 63, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-25 09:44:40", created_at: "2014-10-25 09:44:40", updated_at: "2014-10-25 09:44:40">, #<Aktivnost id: 66, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-25 09:49:45", created_at: "2014-10-25 09:49:45", updated_at: "2014-10-25 09:49:45">, #<Aktivnost id: 75, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 08:16:19", created_at: "2014-10-26 08:16:19", updated_at: "2014-10-26 08:16:19">, #<Aktivnost id: 77, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 08:21:47", created_at: "2014-10-26 08:21:47", updated_at: "2014-10-26 08:21:47">]> 
+2.1.0 :041 > 
+   (4.7ms)  SELECT COUNT(*) FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."pitanje" = 1 AND "aktivnosts"."rez" = 'ok'
+ => 9 
+2.1.0 :042 > Aktivnost.where(user_id: 1, pitanje: 1,rez: 'ok').first
+  Aktivnost Load (5.6ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."pitanje" = 1 AND "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ => #<Aktivnost id: 2, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-24 13:47:18", created_at: "2014-10-24 13:47:18", updated_at: "2014-10-24 13:47:18"> 
+2.1.0 :043 > reload!
+Reloading...
+ => true 
+2.1.0 :044 > u = User.find(1)
+  User Load (1.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAADVihYcbQcqykA2nsu8ZBoFU0G9tLS6kQaoi...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 09:57:33", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :045 > u.tacno(1)
+  Aktivnost Load (1.1ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."pitanje" = 1 AND "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ArgumentError: wrong number of arguments (0 for 1)
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:24:in `datum'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:32:in `tacno'
+	from (irb):45
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :046 > reload!
+Reloading...
+ => true 
+2.1.0 :047 > u = User.find(1)
+  User Load (7.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => #<User id: 1, provider: "facebook", uid: "10203319957053033", name: "Bratislav Petrovic", oauth_token: "CAALJ1FgWZArsBAADVihYcbQcqykA2nsu8ZBoFU0G9tLS6kQaoi...", oauth_expires_at: "2014-12-25 08:16:10", created_at: "2014-10-24 08:07:29", updated_at: "2014-10-26 09:57:33", image: "http://graph.facebook.com/10203319957053033/picture...", location: nil> 
+2.1.0 :048 > u.tacno
+ArgumentError: wrong number of arguments (0 for 1)
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:28:in `tacno'
+	from (irb):48
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :049 > u.tacno(1)
+  Aktivnost Load (4.8ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."pitanje" = 1 AND "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ => "Vi ste stvarno pametni i na  Martino  ste odgovorili 24/10/2014.." 
+2.1.0 :050 > u.tacno(2)
+  Aktivnost Load (1.4ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."pitanje" = 2 AND "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ => "Vi ste stvarno pametni i na Kjarino ste odgovorili 24/10/2014.." 
+2.1.0 :051 > 
+  SQL (28.7ms)  DELETE FROM "aktivnosts"
+ => 95 
+2.1.0 :052 > Aktivnost.delete_all
+  SQL (3.2ms)  DELETE FROM "aktivnosts"
+ => 5 
+2.1.0 :053 > Aktivnost.delete_all
+  SQL (2.5ms)  DELETE FROM "aktivnosts"
+ => 4 
+2.1.0 :054 > Aktivnost.delete_all
+  SQL (1.9ms)  DELETE FROM "aktivnosts"
+ => 3 
+2.1.0 :055 > Aktivnost.delete_all
+  SQL (2.0ms)  DELETE FROM "aktivnosts"
+ => 1 
+2.1.0 :056 > Aktivnost.delete_all
+  SQL (1.9ms)  DELETE FROM "aktivnosts"
+ => 1 
+2.1.0 :057 > Aktivnost.delete_all
+  SQL (2.8ms)  DELETE FROM "aktivnosts"
+ => 2 
+2.1.0 :058 > Akticnost.where(rez: 'ok')
+NameError: uninitialized constant Akticnost
+	from (irb):58
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :059 > Aktivnost.where(rez: 'ok')
+  Aktivnost Load (1.4ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: 112, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 10:53:36", created_at: "2014-10-26 10:53:36", updated_at: "2014-10-26 10:53:36">, #<Aktivnost id: 113, user_id: 1, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 10:53:44", created_at: "2014-10-26 10:53:44", updated_at: "2014-10-26 10:53:44">, #<Aktivnost id: 116, user_id: 2, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 11:01:28", created_at: "2014-10-26 11:01:28", updated_at: "2014-10-26 11:01:28">, #<Aktivnost id: 118, user_id: 2, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 11:01:53", created_at: "2014-10-26 11:01:53", updated_at: "2014-10-26 11:01:53">, #<Aktivnost id: 121, user_id: 3, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 11:06:36", created_at: "2014-10-26 11:06:36", updated_at: "2014-10-26 11:06:36">, #<Aktivnost id: 122, user_id: 3, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 11:07:12", created_at: "2014-10-26 11:07:12", updated_at: "2014-10-26 11:07:12">]> 
+2.1.0 :060 > Aktivnost.where(rez: 'ok').count
+   (0.9ms)  SELECT COUNT(*) FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => 6 
+2.1.0 :061 > Aktivnost.select(:user_id).where(rez: 'ok')
+  Aktivnost Load (0.8ms)  SELECT user_id FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1>, #<Aktivnost id: nil, user_id: 1>, #<Aktivnost id: nil, user_id: 2>, #<Aktivnost id: nil, user_id: 2>, #<Aktivnost id: nil, user_id: 3>, #<Aktivnost id: nil, user_id: 3>]> 
+2.1.0 :062 > Aktivnost.select(:user_id,max(:kad)).where(rez: 'ok')
+NoMethodError: undefined method `max' for main:Object
+	from (irb):62
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :063 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id")
+  Aktivnost Load (86.2ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :064 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order(kad: :desc)
+  Aktivnost Load (7.2ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY "aktivnosts"."kad" DESC
+PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnosts"."kad" DESC
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnosts"."kad" DESC
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :065 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id")
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :066 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order(kad: desc)
+NameError: undefined local variable or method `desc' for main:Object
+	from (irb):66
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :067 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order(kad: Ldesc)
+NameError: uninitialized constant Ldesc
+	from (irb):67
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :068 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order(kad: :desc)
+  Aktivnost Load (5.0ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY "aktivnosts"."kad" DESC
+PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnosts"."kad" DESC
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnosts"."kad" DESC
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :069 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order(max(kad) :desc)
+SyntaxError: (irb):69: syntax error, unexpected ':', expecting ')'
+...oup("user_id").order(max(kad) :desc)
+...                               ^
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :070 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order(max(kad) 'desc')
+SyntaxError: (irb):70: syntax error, unexpected tSTRING_BEG, expecting ')'
+...oup("user_id").order(max(kad) 'desc')
+...                               ^
+(irb):70: syntax error, unexpected ')', expecting end-of-input
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :071 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order(2)
+  Aktivnost Load (1.1ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY 
+PG::SyntaxError: ERROR:  syntax error at or near ""
+LINE 1: ...(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY 
+                                                                      ^
+: SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY 
+ActiveRecord::StatementInvalid: PG::SyntaxError: ERROR:  syntax error at or near ""
+LINE 1: ...(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY 
+                                                                      ^
+: SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts"  GROUP BY user_id  ORDER BY 
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :072 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order('kad')
+  Aktivnost Load (1.1ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :073 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order('kad').desc
+NoMethodError:   Aktivnost Load (1.0ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+undefined method `desc' for #<ActiveRecord::Relation::ActiveRecord_Relation_Aktivnost:0x00000004f180e8>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from (irb):73
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :074 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order('kad')
+  Aktivnost Load (0.5ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :075 > 
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :076 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order('kad') limit 10
+SyntaxError: (irb):76: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...p("user_id").order('kad') limit 10
+...                               ^
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :077 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order('kad').limit(10)
+  Aktivnost Load (3.9ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad LIMIT 10
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :078 > reload!
+Reloading...
+ => true 
+2.1.0 :079 > User.heroji
+  Aktivnost Load (7.4ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad LIMIT 10
+  User Load (1.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+NameError: undefined local variable or method `image' for #<Class:0x00000004ceb7c0>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:32:in `block in heroji'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:30:in `each'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:30:in `heroji'
+	from (irb):79
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :080 > User.heroji
+  Aktivnost Load (1.1ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad LIMIT 10
+  User Load (4.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+NameError: undefined local variable or method `image' for #<Class:0x00000004ceb7c0>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:32:in `block in heroji'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:30:in `each'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:30:in `heroji'
+	from (irb):80
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :081 > reload!
+Reloading...
+ => true 
+2.1.0 :082 > User.heroji
+  Aktivnost Load (5.2ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad LIMIT 10
+#<Aktivnost:0x00000004a236c8>
+#<Aktivnost:0x0000000499eb08>
+#<Aktivnost:0x0000000499e720>
+  User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+NameError: undefined local variable or method `image' for #<Class:0x00000004a39338>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:33:in `block in heroji'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:31:in `each'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:31:in `heroji'
+	from (irb):82
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :083 > reload!
+Reloading...
+ => true 
+2.1.0 :084 > User.heroji
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad LIMIT 10
+#<Aktivnost:0x00000003550a20>
+#<Aktivnost:0x00000003458c08>
+#<Aktivnost:0x000000034586b8>
+  User Load (1.5ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  User Load (0.5ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  User Load (0.2ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+ => [{:image=>"http://graph.facebook.com/1503377119919848/picture", :datum=>Sun, 26 Oct 2014 11:07:12 UTC +00:00}, {:image=>"http://graph.facebook.com/1576413642589827/picture", :datum=>Sun, 26 Oct 2014 11:01:53 UTC +00:00}, {:image=>"http://graph.facebook.com/10203319957053033/picture", :datum=>Sun, 26 Oct 2014 10:53:44 UTC +00:00}] 
+2.1.0 :085 > Aktivnost.select("user_id as user_id,max(kad) as kad").group("user_id").order('kad').limit(10)
+  Aktivnost Load (9.3ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad LIMIT 10
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :086 > Aktivnost.select("user_id as user_id,max(kad) as kad").where(rez: 1)..group("user_id").order('kad').limit(10)
+NoMethodError: undefined method `group' for main:Object
+	from (irb):86
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :087 > Aktivnost.select("user_id as user_id,max(kad) as kad").where(rez: 1).group("user_id").order('kad').limit(10)
+  Aktivnost Load (45.1ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" WHERE "aktivnosts"."rez" = 1 GROUP BY user_id ORDER BY kad LIMIT 10
+PG::UndefinedFunction: ERROR:  operator does not exist: character varying = integer
+LINE 1: ...s kad FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 1 GROUP ...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  user_id as user_id,max(kad) as kad FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 1 GROUP BY user_id  ORDER BY kad LIMIT 10
+ActiveRecord::StatementInvalid: PG::UndefinedFunction: ERROR:  operator does not exist: character varying = integer
+LINE 1: ...s kad FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 1 GROUP ...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT  user_id as user_id,max(kad) as kad FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 1 GROUP BY user_id  ORDER BY kad LIMIT 10
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :088 > Aktivnost.select("user_id as user_id,max(kad) as kad").where(rez: '1').group("user_id").order('kad').limit(10)
+  Aktivnost Load (1.1ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" WHERE "aktivnosts"."rez" = '1' GROUP BY user_id ORDER BY kad LIMIT 10
+ => #<ActiveRecord::Relation []> 
+2.1.0 :089 > Aktivnost.select("user_id as user_id,max(kad) as kad").where(rez: 'ok').group("user_id").order('kad').limit(10)
+  Aktivnost Load (7.0ms)  SELECT user_id as user_id,max(kad) as kad FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok' GROUP BY user_id ORDER BY kad LIMIT 10
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: "2014-10-26 10:53:44">, #<Aktivnost id: nil, user_id: 2, kad: "2014-10-26 11:01:53">, #<Aktivnost id: nil, user_id: 3, kad: "2014-10-26 11:07:12">]> 
+2.1.0 :090 > Aktivnost.select("user_id as user_id,count(kad) as kad").group("user_id").order('kad')
+  Aktivnost Load (1.9ms)  SELECT user_id as user_id,count(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: 2>, #<Aktivnost id: nil, user_id: 3, kad: 4>, #<Aktivnost id: nil, user_id: 2, kad: 5>]> 
+2.1.0 :091 > Aktivnost.select("user_id as user_id,count(kad) as kad").group("user_id").order('kad')
+  Aktivnost Load (3.8ms)  SELECT user_id as user_id,count(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: 2>, #<Aktivnost id: nil, user_id: 3, kad: 4>, #<Aktivnost id: nil, user_id: 2, kad: 5>]> 
+2.1.0 :092 > a = Aktivnost.select("user_id as user_id,count(kad) as kad").group("user_id").order('kad')
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,count(kad) as kad FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1, kad: 2>, #<Aktivnost id: nil, user_id: 3, kad: 4>, #<Aktivnost id: nil, user_id: 2, kad: 5>]> 
+2.1.0 :093 > a.size
+ => 3 
+2.1.0 :094 > a = Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id").order('kad')
+  Aktivnost Load (1.8ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ... as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+                                                                    ^
+: SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ... as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+                                                                    ^
+: SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :095 > a = Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id").order('kad')
+  Aktivnost Load (6.3ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id ORDER BY kad
+PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ... as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+                                                                    ^
+: SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.kad" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ... as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+                                                                    ^
+: SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY kad
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:573:in `inspect'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :096 > a = Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id")
+  Aktivnost Load (5.1ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1>, #<Aktivnost id: nil, user_id: 2>, #<Aktivnost id: nil, user_id: 3>]> 
+2.1.0 :097 > a.koliko
+NoMethodError: undefined method `koliko' for #<ActiveRecord::Relation::ActiveRecord_Relation_Aktivnost:0x00000002f68b80>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from (irb):97
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :098 > a.size
+ => 3 
+2.1.0 :099 > a[0].koliko
+ => 2 
+2.1.0 :100 > Aktivnost.select("count(kad) as koliko").where(rez: 'ok').group("user_id")
+  Aktivnost Load (4.5ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok' GROUP BY user_id
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>, #<Aktivnost id: nil>, #<Aktivnost id: nil>]> 
+2.1.0 :101 > Aktivnost.select("count(kad) as koliko").where(rez: 'ok').group("user_id").first
+  Aktivnost Load (4.8ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok' GROUP BY user_id ORDER BY "aktivnosts"."id" ASC LIMIT 1
+PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...tivnosts"."rez" = 'ok' GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok' GROUP BY user_id  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...tivnosts"."rez" = 'ok' GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok' GROUP BY user_id  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:325:in `find_first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:90:in `first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:129:in `first'
+	from (irb):101
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :102 > Aktivnost.select("count(kad) as koliko").where(rez: 'ok')
+  Aktivnost Load (6.0ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :103 > Aktivnost.select("count(kad) as koliko").where(rez: 'ok').first
+  Aktivnost Load (5.4ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:325:in `find_first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:90:in `first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:129:in `first'
+	from (irb):103
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :104 > Aktivnost.select("count(kad) as koliko").where(rez: 'ok').first
+  Aktivnost Load (7.0ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:325:in `find_first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:90:in `first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:129:in `first'
+	from (irb):104
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :105 > Aktivnost.select("count(kad) as koliko").where(rez:'ok')
+  Aktivnost Load (1.2ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :106 > Aktivnost.select("count(kad) as koliko").where(rez:'ok').size
+   (2.3ms)  SELECT COUNT(count(kad) as koliko) FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+PG::SyntaxError: ERROR:  syntax error at or near "as"
+LINE 1: SELECT COUNT(count(kad) as koliko) FROM "aktivnosts"  WHERE ...
+                                ^
+: SELECT COUNT(count(kad) as koliko) FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'
+ActiveRecord::StatementInvalid: PG::SyntaxError: ERROR:  syntax error at or near "as"
+LINE 1: SELECT COUNT(count(kad) as koliko) FROM "aktivnosts"  WHERE ...
+                                ^
+: SELECT COUNT(count(kad) as koliko) FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/calculations.rb:262:in `execute_simple_calculation'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/calculations.rb:24:in `count'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:230:in `size'
+	from (irb):106
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :107 > Aktivnost.select("count(kad) as koliko").where(rez:'ok').length
+  Aktivnost Load (4.5ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => 1 
+2.1.0 :108 > Aktivnost.select("count(kad) as koliko").where(rez:'ok').koliko
+NoMethodError:   Aktivnost Load (4.9ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+undefined method `koliko' for #<ActiveRecord::Relation [#<Aktivnost id: nil>]>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from (irb):108
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :109 > Aktivnost.select("count(kad) as koliko").where(rez:'ok')
+  Aktivnost Load (8.7ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :110 > a = Aktivnost.select("count(kad) as koliko").where(rez:'ok')
+  Aktivnost Load (4.5ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :111 > Aktivnost.all
+  Aktivnost Load (1.7ms)  SELECT "aktivnosts".* FROM "aktivnosts"
+ => #<ActiveRecord::Relation [#<Aktivnost id: 112, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 10:53:36", created_at: "2014-10-26 10:53:36", updated_at: "2014-10-26 10:53:36">, #<Aktivnost id: 113, user_id: 1, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 10:53:44", created_at: "2014-10-26 10:53:44", updated_at: "2014-10-26 10:53:44">, #<Aktivnost id: 114, user_id: 2, pitanje: 1, odgovor: "16", rez: "not ok", kad: "2014-10-26 11:00:35", created_at: "2014-10-26 11:00:35", updated_at: "2014-10-26 11:00:35">, #<Aktivnost id: 115, user_id: 2, pitanje: 2, odgovor: "mm", rez: "not ok", kad: "2014-10-26 11:01:11", created_at: "2014-10-26 11:01:11", updated_at: "2014-10-26 11:01:11">, #<Aktivnost id: 116, user_id: 2, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 11:01:28", created_at: "2014-10-26 11:01:28", updated_at: "2014-10-26 11:01:28">, #<Aktivnost id: 117, user_id: 2, pitanje: 2, odgovor: "nikog", rez: "not ok", kad: "2014-10-26 11:01:43", created_at: "2014-10-26 11:01:43", updated_at: "2014-10-26 11:01:43">, #<Aktivnost id: 118, user_id: 2, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 11:01:53", created_at: "2014-10-26 11:01:53", updated_at: "2014-10-26 11:01:53">, #<Aktivnost id: 119, user_id: 3, pitanje: 1, odgovor: "1", rez: "not ok", kad: "2014-10-26 11:06:00", created_at: "2014-10-26 11:06:00", updated_at: "2014-10-26 11:06:00">, #<Aktivnost id: 120, user_id: 3, pitanje: 1, odgovor: "13", rez: "not ok", kad: "2014-10-26 11:06:25", created_at: "2014-10-26 11:06:25", updated_at: "2014-10-26 11:06:25">, #<Aktivnost id: 121, user_id: 3, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 11:06:36", created_at: "2014-10-26 11:06:36", updated_at: "2014-10-26 11:06:36">, ...]> 
+2.1.0 :112 > a = Aktivnost.select("count(kad) as koliko").where(rez: "ok")
+  Aktivnost Load (1.6ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :113 > a = Aktivnost.select("count(kad) as koliko").where(rez: "ok")
+  Aktivnost Load (0.9ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :114 > a
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :115 > a.size
+ => 1 
+2.1.0 :116 > a.koliko
+NoMethodError: undefined method `koliko' for #<ActiveRecord::Relation [#<Aktivnost id: nil>]>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from (irb):116
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :117 > a['koliko'
+2.1.0 :118?>   ]
+TypeError: no implicit conversion of String into Integer
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:50:in `[]'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:50:in `[]'
+	from (irb):117
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :119 > a[0]
+ => #<Aktivnost id: nil> 
+2.1.0 :120 > a[1]
+ => nil 
+2.1.0 :121 > a[2]
+ => nil 
+2.1.0 :122 > a = Aktivnost.select("count(kad) as koliko").where(rez: "ok")
+  Aktivnost Load (5.4ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :123 > a = Aktivnost.where(rez: "ok").select("count(kad) as koliko")
+  Aktivnost Load (4.8ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :124 > a = Aktivnost.where(rez: "ok").select("count(kad) as koliko").first
+  Aktivnost Load (6.0ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:325:in `find_first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:90:in `first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:129:in `first'
+	from (irb):124
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :125 > a = Aktivnost.where(rez: "ok").select("count(kad) as koliko")
+  Aktivnost Load (4.1ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil>]> 
+2.1.0 :126 > a = Aktivnost.where(rez: "ok").select("count(kad) as koliko").koliko
+NoMethodError:   Aktivnost Load (0.9ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+undefined method `koliko' for #<ActiveRecord::Relation [#<Aktivnost id: nil>]>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from (irb):126
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :127 > a = Aktivnost.where(rez: "ok").select("count(kad) as koliko").first.koliko
+  Aktivnost Load (8.3ms)  SELECT count(kad) as koliko FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...nosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  count(kad) as koliko FROM "aktivnosts"  WHERE "aktivnosts"."rez" = 'ok'  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:325:in `find_first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:90:in `first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:129:in `first'
+	from (irb):127
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :128 > a = Aktivnost.where(rez: "ok")
+  Aktivnost Load (0.7ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => #<ActiveRecord::Relation [#<Aktivnost id: 112, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 10:53:36", created_at: "2014-10-26 10:53:36", updated_at: "2014-10-26 10:53:36">, #<Aktivnost id: 113, user_id: 1, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 10:53:44", created_at: "2014-10-26 10:53:44", updated_at: "2014-10-26 10:53:44">, #<Aktivnost id: 116, user_id: 2, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 11:01:28", created_at: "2014-10-26 11:01:28", updated_at: "2014-10-26 11:01:28">, #<Aktivnost id: 118, user_id: 2, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 11:01:53", created_at: "2014-10-26 11:01:53", updated_at: "2014-10-26 11:01:53">, #<Aktivnost id: 121, user_id: 3, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 11:06:36", created_at: "2014-10-26 11:06:36", updated_at: "2014-10-26 11:06:36">, #<Aktivnost id: 122, user_id: 3, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 11:07:12", created_at: "2014-10-26 11:07:12", updated_at: "2014-10-26 11:07:12">]> 
+2.1.0 :129 > a = Aktivnost.where(rez: "ok").count
+   (1.2ms)  SELECT COUNT(*) FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => 6 
+2.1.0 :130 > a = Aktivnost.where(rez: "ok").count
+   (6.6ms)  SELECT COUNT(*) FROM "aktivnosts" WHERE "aktivnosts"."rez" = 'ok'
+ => 6 
+2.1.0 :131 > Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id")
+  Aktivnost Load (7.7ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1>, #<Aktivnost id: nil, user_id: 2>, #<Aktivnost id: nil, user_id: 3>]> 
+2.1.0 :132 > Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id").first
+  Aktivnost Load (5.2ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id ORDER BY "aktivnosts"."id" ASC LIMIT 1
+PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...iko FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  user_id as user_id,count(kad) as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ActiveRecord::StatementInvalid: PG::GroupingError: ERROR:  column "aktivnosts.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...iko FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnost...
+                                                             ^
+: SELECT  user_id as user_id,count(kad) as koliko FROM "aktivnosts"  GROUP BY user_id  ORDER BY "aktivnosts"."id" ASC LIMIT 1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `async_exec'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:774:in `exec_no_cache'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:435:in `block in log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract_adapter.rb:430:in `log'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:891:in `select'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:63:in `select_all'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/querying.rb:36:in `find_by_sql'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:585:in `exec_queries'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:471:in `load'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation.rb:220:in `to_a'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:325:in `find_first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/finder_methods.rb:90:in `first'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:129:in `first'
+	from (irb):132
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'2.1.0 :133 > Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id").size
+   (0.9ms)  SELECT COUNT(*) AS count_all, user_id AS user_id FROM "aktivnosts" GROUP BY user_id
+ => {1=>2, 2=>5, 3=>4} 
+2.1.0 :134 > Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id").size
+   (6.2ms)  SELECT COUNT(*) AS count_all, user_id AS user_id FROM "aktivnosts" GROUP BY user_id
+ => {1=>2, 2=>5, 3=>4} 
+2.1.0 :135 > 
+  Aktivnost Load (4.8ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => #<ActiveRecord::Relation [#<Aktivnost id: nil, user_id: 1>, #<Aktivnost id: nil, user_id: 2>, #<Aktivnost id: nil, user_id: 3>]> 
+2.1.0 :136 > reload!
+Reloading...
+ => true 
+2.1.0 :137 > User.nelogovan
+NoMethodError: undefined method `nelogovan' for #<Class:0x0000000564c8c8>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from (irb):137
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :138 > User.nelogovan
+NoMethodError: undefined method `nelogovan' for #<Class:0x0000000564c8c8>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from (irb):138
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :139 > reload!
+Reloading...
+ => true 
+2.1.0 :140 > User.nelogovan
+  Aktivnost Load (6.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+NameError: undefined local variable or method `odgovora' for #<Class:0x00000005526700>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:71:in `nelogovan'
+	from (irb):140
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :141 > User.nelogovan
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+NameError: undefined local variable or method `odgovora' for #<Class:0x00000005526700>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:71:in `nelogovan'
+	from (irb):141
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :142 > reload!
+Reloading...
+ => true 
+2.1.0 :143 > User.nelogovan
+  Aktivnost Load (5.2ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => "Do sada je pokušalo 3 i  odgovorilo  3 puta" 
+2.1.0 :144 > User.nelogovan
+  Aktivnost Load (1.1ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => "Do sada je pokušalo 3 i  odgovorilo  3 puta" 
+2.1.0 :145 > reload!
+Reloading...
+ => true 
+2.1.0 :146 > User.nelogovan
+  Aktivnost Load (0.9ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+NoMethodError: undefined method `koliko' for #<ActiveRecord::Relation::ActiveRecord_Relation_Aktivnost:0x00000005160530>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:69:in `block in nelogovan'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:13:in `each'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:13:in `each'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:67:in `nelogovan'
+	from (irb):146
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :147 > reload!
+Reloading...
+ => true 
+2.1.0 :148 > User.nelogovan
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+NoMethodError: undefined method `koliko' for #<ActiveRecord::Relation::ActiveRecord_Relation_Aktivnost:0x00000004fce7d0>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:69:in `block in nelogovan'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:13:in `each'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:13:in `each'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:67:in `nelogovan'
+	from (irb):148
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :149 > User.nelogovan
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+NoMethodError: undefined method `koliko' for #<ActiveRecord::Relation::ActiveRecord_Relation_Aktivnost:0x00000004efd068>
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:121:in `method_missing'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:68:in `method_missing'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:69:in `block in nelogovan'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:13:in `each'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/relation/delegation.rb:13:in `each'
+	from /home/cobranet/develop/rails/marta/app/models/user.rb:67:in `nelogovan'
+	from (irb):149
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :150 > reload!
+Reloading...
+ => true 
+2.1.0 :151 > User.nelogovan
+  Aktivnost Load (8.8ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => "Do sada je pokušalo 3 i  odgovorilo  11 puta" 
+2.1.0 :152 > reload!
+Reloading...
+ => true 
+2.1.0 :153 > User.nelogovan
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => "Do sada je pokušalo 3 i  probalo  11 puta" 
+2.1.0 :154 > User.nelogovan
+  Aktivnost Load (1.1ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => "Do sada je pokušalo 3 i  probalo  11 puta" 
+2.1.0 :155 > reload!
+Reloading...
+ => true 
+2.1.0 :156 > User.nelogovan
+  Aktivnost Load (4.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => "Do sada je pokušalo 3 pametnjeakovica  i  probalo  11 puta" 
+2.1.0 :157 > User.nelogovan
+  Aktivnost Load (1.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
+ => "Do sada je pokušalo 3 pametnjeakovica  i  probalo  11 puta" 
+2.1.0 :158 > 
