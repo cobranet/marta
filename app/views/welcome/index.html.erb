@@ -1,79 +1,24 @@
 <div class="container">
-  <div class="row">     
-    fhdk hfkhfdskhf kfkjsdhf fsdhf fhksjadhf ahfkad
+  <div id="toprow" class="row">     
+      <%= render partial: "toprow" %>
   </div>
+  
   <div class="row main" >
-    
     <div class="row bnaslov">     
-      <h2 class="bmain" > MARTINA VELIKA ZAGONETNA AVANTURA </h2>
+      <%= render partial: "bnaslov" %>
     </div>
-    
     <div class="row">
+      
       <span class="col-md-2 bleft"> 
       </span>
+      
       <span class="col-md-8 bmiddle">
-	<div class="row"> 
-	  <div id="seprow0" class="row"> 
-	  </div>  
-	  <% if current_user %> 
-	  <small><%= link_to "Sign out", signout_path %><br/></small>
-	  <% end %> 
-	</div>  
-
-	<div id="seprow1" class="row">
-        </div>
-
-	<div class="row zdravo ">
-          <% if current_user %>
-  	    <h3 id="poruka"> <%= current_user.poruka %></h3>
-          <% end %>
-	</div> 
-
-	<div class="row user_image ">
-          <% if current_user %>
-  	    <%= image_tag current_user.image %>  
-          <% end %>
-	</div> 
-	
-	<div id="seprow2" class="row">
-        </div>
-	<div id="pametni1" class="row pametni"> 
-	  <% if current_user && current_user.tacno(1) != nil   %>
-	    <%= current_user.tacno(1) %>
-          <% end  %>
-        </div>
-	<div id="pametni2" class="row pametni"> 
-	  <% if current_user && current_user.tacno(2) != nil   %>
-	    <%= current_user.tacno(2) %>
-          <% end  %>
-        </div>
-	 <% if current_user %>
-	   <div class="row pitanja">
-	     <% if current_user.tacno(1) == nil %>
-	       <button id="marta" class="btn btn-lg btn-primary bquest ">Martino pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
-	     <% end %>
-	     
-	     <% if current_user.tacno(2) == nil %>
-	      <button id="klara" class="btn btn-lg btn-primary bquest ">Klarino  pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
-	     <% end %>  
-	     
-	    </div>
-   
-	 <% else %> 
-	   <%= User.nelogovan %>
-	   <%= button_to "Sign in with Facebook", "/auth/facebook",:class => "btn-lg btn-primary mbtn"  %>
-	   
-         <% end %> 
- 
- 	<h4>Heroji</h4>
-
-	<% @heroji.each do |hero| %>
-	  <%= image_tag "#{hero[:image]}"  %> 
-	<% end %>
-
+        <%= render partial: "middlecol" %>	
       </span> 
+      
       <span class="col-md-2 bright"> 
       </span> 
+      
     </div>
   </div>
 </div>

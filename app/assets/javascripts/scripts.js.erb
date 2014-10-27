@@ -4,10 +4,19 @@ function showBadAnswer(){
         $textAndPic.append('<%= image_tag "mojamarta.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Pokušajte ponovo sutradan',
+            onshown: function(dialogRef){
+		    $('#okbutton').focus();
+		    $("#okbutton").keyup(function(event){
+			if(event.keyCode == 13){
+			    $("#okbutton").click();
+			}
+		    });
+		  },  
 	    message: $textAndPic,
 	    cssClass: 'pitdlg',
 		buttons: [{
                     label: 'OK',
+		    id: "okbutton",
 		    cssClass: 'button  btn-lg',
                     action: function(dialogRef){
 			dialogRef.close();
@@ -22,9 +31,18 @@ function showGoodAnswer(){
         BootstrapDialog.show({
 	    title: 'Bravo!!',
 	    message: $textAndPic,
+            onshown: function(dialogRef){
+		    $('#okbutton').focus();
+		    $("#okbutton").keyup(function(event){
+			if(event.keyCode == 13){
+			    $("#okbutton").click();
+			}
+		    });
+		  },  
 	    cssClass: 'pitdlg',
 		buttons: [{
                     label: 'OK',
+		    id: "okbutton",
 		    cssClass: 'button  btn-lg',
                     action: function(dialogRef){
 			dialogRef.close();
@@ -47,11 +65,17 @@ function showPitanje(num){
 		title: 'Zagonetka',
 		onshown: function(dialogRef){
 		    $('#odg').focus();
+		    $("#odg").keyup(function(event){
+			if(event.keyCode == 13){
+			    $("#okbutton").click();
+			}
+		    });
 		  },  
 		message: $textAndPic,
 		cssClass: 'pitdlg',
 		buttons: [{
                     label: 'OK',
+		    id: "okbutton",
 		    cssClass: 'button  btn-lg',
                     action: function(dialogRef){
 			$.ajax({

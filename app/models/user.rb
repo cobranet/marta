@@ -15,10 +15,10 @@ class User < ActiveRecord::Base
   end
   # Who ask question .. must be moved to database
   def cije(broj) 
-    if  broj == 1 
+    if  broj == 1.to_i 
        cije = " Martino " 
     else
-      cije = "Kjarino" 
+       cije = "Kjarino" 
     end  
   end
   # format date in Serbian ?
@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
     end
   end
   
+  def self_user_oba_tacno
+    
+  end
+  
   # poruka za usera
   def poruka
     last = Aktivnost.where(user_id: self.id).order(kad: :desc).first
@@ -68,6 +72,10 @@ class User < ActiveRecord::Base
       usera = usera + 1
       odgovora = odgovora + user[:koliko]
     end  
-    n = "Do sada je pokušalo #{usera} pametnjeakovića i probalo #{odgovora} puta"
+    n = "Do sada je pokušalo #{usera} pametnjeakovića i odgovorilo  #{odgovora} puta"
   end
+
+  def self.delete_activity(user_id) 
+    Aktivnost.where(user_id: user_id).destroy_all
+  end  
 end

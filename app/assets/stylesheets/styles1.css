@@ -52,9 +52,9 @@
     }
 }
 
-@media (min-width: 100px) {
+@media (max-width:480px) {
     .main {
-      background: url('konfrotacija.jpg') no-repeat center center; 
+      background: url('naslovna.jpg') no-repeat center center; 
     }
 
 }

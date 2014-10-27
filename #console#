@@ -1175,4 +1175,141 @@ Reloading...
 2.1.0 :157 > User.nelogovan
   Aktivnost Load (1.0ms)  SELECT user_id as user_id,count(kad) as koliko FROM "aktivnosts" GROUP BY user_id
  => "Do sada je pokušalo 3 pametnjeakovica  i  probalo  11 puta" 
-2.1.0 :158 > 
+2.1.0 :158 > reload!
+Reloading...
+ => true 
+2.1.0 :159 > User.delete_activity(1)
+  Aktivnost Load (1.3ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1
+   (5.6ms)  BEGIN
+  SQL (1.3ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 112]]
+   (1.4ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.4ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 113]]
+   (1.6ms)  COMMIT
+ => [#<Aktivnost id: 112, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-26 10:53:36", created_at: "2014-10-26 10:53:36", updated_at: "2014-10-26 10:53:36">, #<Aktivnost id: 113, user_id: 1, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-26 10:53:44", created_at: "2014-10-26 10:53:44", updated_at: "2014-10-26 10:53:44">] 
+2.1.0 :160 > User.delete_activity(1)
+  Aktivnost Load (7.5ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1
+   (0.4ms)  BEGIN
+  SQL (0.7ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 123]]
+   (1.2ms)  COMMIT
+   (0.3ms)  BEGIN
+  SQL (0.5ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 124]]
+   (22.0ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.3ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 125]]
+   (1.6ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 126]]
+   (0.9ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 127]]
+   (1.0ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 128]]
+   (1.1ms)  COMMIT
+ => [#<Aktivnost id: 123, user_id: 1, pitanje: 1, odgovor: "13", rez: "not ok", kad: "2014-10-27 09:28:29", created_at: "2014-10-27 09:28:29", updated_at: "2014-10-27 09:28:29">, #<Aktivnost id: 124, user_id: 1, pitanje: 1, odgovor: "33", rez: "not ok", kad: "2014-10-27 09:30:27", created_at: "2014-10-27 09:30:27", updated_at: "2014-10-27 09:30:27">, #<Aktivnost id: 125, user_id: 1, pitanje: 1, odgovor: "444", rez: "not ok", kad: "2014-10-27 09:33:35", created_at: "2014-10-27 09:33:35", updated_at: "2014-10-27 09:33:35">, #<Aktivnost id: 126, user_id: 1, pitanje: 1, odgovor: "444", rez: "not ok", kad: "2014-10-27 09:34:38", created_at: "2014-10-27 09:34:38", updated_at: "2014-10-27 09:34:38">, #<Aktivnost id: 127, user_id: 1, pitanje: 1, odgovor: "434", rez: "not ok", kad: "2014-10-27 09:35:29", created_at: "2014-10-27 09:35:29", updated_at: "2014-10-27 09:35:29">, #<Aktivnost id: 128, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-27 09:45:32", created_at: "2014-10-27 09:45:32", updated_at: "2014-10-27 09:45:32">] 
+2.1.0 :161 > reload!
+Reloading...
+ => true 
+2.1.0 :162 > Aktivnost.where(user_id: 1, pitanje: pitanje,rez: 'ok').first
+NameError: undefined local variable or method `pitanje' for main:Object
+	from (irb):162
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :163 > User.delete_activity(1)
+  Aktivnost Load (3.0ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1
+   (0.2ms)  BEGIN
+  SQL (0.6ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 129]]
+   (2.2ms)  COMMIT
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 130]]
+   (1.3ms)  COMMIT
+ => [#<Aktivnost id: 129, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-27 09:46:37", created_at: "2014-10-27 09:46:37", updated_at: "2014-10-27 09:46:37">, #<Aktivnost id: 130, user_id: 1, pitanje: 2, odgovor: "nikoga", rez: "ok", kad: "2014-10-27 12:05:12", created_at: "2014-10-27 12:05:12", updated_at: "2014-10-27 12:05:12">] 
+2.1.0 :164 > reload!
+Reloading...
+ => true 
+2.1.0 :165 >     t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first
+NoMethodError: undefined method `id' for main:Object
+	from (irb):165
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :166 > dirs
+NameError: undefined local variable or method `dirs' for main:Object
+	from (irb):166
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :167 >     t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first
+NoMethodError: undefined method `id' for main:Object
+	from (irb):167
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :168 >     t = Aktivnost.where(user_id: 1, pitanje: pitanje,rez: 'ok').first
+NameError: undefined local variable or method `pitanje' for main:Object
+	from (irb):168
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :169 >     t = Aktivnost.where(user_id: 1, ,rez: 'ok').first
+SyntaxError: (irb):169: syntax error, unexpected ',', expecting ')'
+    t = Aktivnost.where(user_id: 1, ,rez: 'ok').first
+                                     ^
+(irb):169: syntax error, unexpected ')', expecting end-of-input
+    t = Aktivnost.where(user_id: 1, ,rez: 'ok').first
+                                               ^
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :170 >     t = Aktivnost.where(user_id: 1 ,rez: 'ok').first
+  Aktivnost Load (6.6ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."rez" = 'ok' ORDER BY "aktivnosts"."id" ASC LIMIT 1
+ => #<Aktivnost id: 132, user_id: 1, pitanje: 2, odgovor: "mene", rez: "ok", kad: "2014-10-27 12:28:48", created_at: "2014-10-27 12:28:48", updated_at: "2014-10-27 12:28:48"> 
+2.1.0 :171 >     t = Aktivnost.where(user_id: 1 ,rez: 'ok').size
+   (5.4ms)  SELECT COUNT(*) FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1 AND "aktivnosts"."rez" = 'ok'
+ => 2 
+2.1.0 :172 >     t = Aktivnost.where(user_id: 1 ,rez: 'ok').1
+SyntaxError: (irb):172: no .<digit> floating literal anymore; put 0 before dot
+    t = Aktivnost.where(user_id: 1 ,rez: 'ok').1
+                                               ^
+(irb):172: syntax error, unexpected tINTEGER, expecting '('
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :173 >     t = Aktivnost.select (user_id).where(rez: 'ok').distinct(
+2.1.0 :174 >         t = Aktivnost.select (user_id).where(rez: 'ok').distinct
+2.1.0 :175?>       t = Aktivnost.select (user_id).where(rez: 'ok').distinct
+2.1.0 :176?>   t
+2.1.0 :177? Aktivnost.select (user_id).where(rez: 'ok').distinct
+2.1.0 :178?>   
+2.1.0 :179 >     
+2.1.0 :180 >     
+2.1.0 :181 > Aktivnost.select (user_id).where(rez: 'ok').distinct
+2.1.0 :182?>    Aktivnost.select (user_id).where(rez: 'ok').distinct
+2.1.0 :183?>   
+2.1.0 :184 >
+2.1.0 :185 >      Aktivnost.select (user_id).where(rez: 'ok').distinct
+2.1.0 :186?>   
+2.1.0 :187 >     Aktivnost.select(user_id).distinct
+2.1.0 :188?>     C-c C-c^C
+2.1.0 :188 >   C-c C-c^C
+2.1.0 :188 > 
+2.1.0 :189 >   quit
+cobranet@ubuntu:~/develop/rails/marta$ rails c
+Loading development environment (Rails 4.0.3)
+2.1.0 :001 > 
