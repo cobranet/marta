@@ -45,6 +45,14 @@
     max-width: auto;
 }
 
+.martabutton {
+      background: url('button_back.png') no-repeat center center;  
+}
+
+.bquest {
+    padding: 3px;
+}
+
 @media (min-width: 800px) {
 
     .main {
@@ -58,3 +66,4 @@
     }
 
 }
+

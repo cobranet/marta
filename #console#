@@ -1312,4 +1312,45 @@ SyntaxError: (irb):172: no .<digit> floating literal anymore; put 0 before dot
 2.1.0 :189 >   quit
 cobranet@ubuntu:~/develop/rails/marta$ rails c
 Loading development environment (Rails 4.0.3)
-2.1.0 :001 > 
+2.1.0 :001 >  Ak
+NameError: uninitialized constant Ak
+	from (irb):1
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :002 > Activnost.delete_activity(1)
+NameError: uninitialized constant Activnost
+	from (irb):2
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.1.0 :003 > Aktivnost.delete_activity(1)
+NoMethodError: undefined method `delete_activity' for Aktivnost(no database connection):Class
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/activerecord-4.0.3/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from (irb):3
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:90:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands/console.rb:9:in `start'
+	from /home/cobranet/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+
+2.1.0 :005 >   reload!
+Reloading...
+ => true 
+2.1.0 :006 > User.delete_activity(1)
+  Aktivnost Load (56.4ms)  SELECT "aktivnosts".* FROM "aktivnosts" WHERE "aktivnosts"."user_id" = 1
+   (0.4ms)  BEGIN
+  SQL (42.0ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 131]]
+   (2.1ms)  COMMIT
+   (0.4ms)  BEGIN
+  SQL (0.7ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 132]]
+   (15.9ms)  COMMIT
+   (0.3ms)  BEGIN
+  SQL (0.6ms)  DELETE FROM "aktivnosts" WHERE "aktivnosts"."id" = $1  [["id", 133]]
+   (2.2ms)  COMMIT
+ => [#<Aktivnost id: 131, user_id: 1, pitanje: 1, odgovor: "14", rez: "not ok", kad: "2014-10-27 12:28:40", created_at: "2014-10-27 12:28:40", updated_at: "2014-10-27 12:28:40">, #<Aktivnost id: 132, user_id: 1, pitanje: 2, odgovor: "mene", rez: "ok", kad: "2014-10-27 12:28:48", created_at: "2014-10-27 12:28:48", updated_at: "2014-10-27 12:28:48">, #<Aktivnost id: 133, user_id: 1, pitanje: 1, odgovor: "12", rez: "ok", kad: "2014-10-27 12:28:56", created_at: "2014-10-27 12:28:56", updated_at: "2014-10-27 12:28:56">] 
+2.1.0 :007 > 
