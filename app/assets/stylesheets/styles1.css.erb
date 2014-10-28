@@ -46,15 +46,23 @@
 }
 
 .martabutton {
-      background: url('button_back.png') no-repeat center center;  
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 10px;
+      background: url('<%= asset_path("button_back.png")%>') no-repeat center center;  
+      background-size: 100%;
+      max-width: auto;
 }
 
 .bquest {
     padding: 3px;
 }
+
+
+.mbtn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    border-radius: 10px;
+}
+
 
 @media (min-width: 800px) {
 
@@ -65,7 +73,7 @@
 
 @media (max-width:480px) {
     .main {
-	background: url('<%= asset_path("naslovna.jpg")%>')  no-repeat center center;
+	background: url('<%= asset_path("smallkonf.png")%>')  no-repeat center center;
     }
 
 }

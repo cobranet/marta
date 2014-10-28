@@ -1,0 +1,11 @@
+<div class="row pitanja ">
+  <div class="martabutton">
+    <% if current_user.tacno(1) == nil %>
+      <button id="marta" class="btn btn-lg btn-primary mbtn ">Martino pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
+    <% end %>
+  
+    <% if current_user.tacno(2) == nil %>
+      <button id="klara" class="btn btn-lg btn-primary mbtn ">Klarino  pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
+    <% end %>
+  </div>
+</div>

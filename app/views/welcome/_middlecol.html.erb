@@ -8,16 +8,11 @@
 
 
 <div class="row zdravo ">
-  <% if current_user %>
-    <h3 id="poruka"> <%= current_user.poruka %></h3>
-  <% end %>
+  <%= render partial: "poruka"%>
 </div> 
 
-<div class="row user_image ">
-  <% if current_user %>
-    <%= image_tag current_user.image %>  
-  <% end %>
-</div> 
+<%= render partial: "user_image" %>
+
 
 <div id="seprow2" class="row">
 </div>
@@ -26,29 +21,10 @@
 <%= render partial: "pametni" %>
 
 <% if current_user %>
-  <div class="row pitanja">
-    <% if current_user.tacno(1) == nil %>
-      <span class="martabutton">
-        <button id="marta" class="btn btn-lg btn-primary bquest ">Martino pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
-      </span>
-    <% end %>
-    <% if current_user.tacno(2) == nil %>
-      <span class="martabutton">
-        <button id="klara" class="btn btn-lg btn-primary bquest ">Klarino  pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
-      </span>
-    <% end %>  
-  </div>
+  <%= render partial: "pitanja" %>  
 <% else %> 
-  <div class="martabutton">
-    <%= button_to "Sign in with Facebook", "/auth/facebook",:class => "btn-lg btn-primary mbtn" %>
-  </div>
+  <%=render partial: "facebook" %>
 <% end %> 
 
-<div id="nelogani"> 
-  <%= User.nelogovan %> 
-</div> 
-
-<h4>Heroji</h4>
-<% @heroji.each do |hero| %>
-  <%= image_tag "#{hero[:image]}"  %> 
-<% end %>
+<%= render partial: "nelogovani" %>
+<%= render partial: "heroji" %>

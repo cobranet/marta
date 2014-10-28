@@ -1,0 +1,6 @@
+<div id="heroji">
+  <h4>Heroji</h4>
+  <% @heroji.each do |hero| %>
+    <%= image_tag "#{hero[:image]}"  %> 
+  <% end %>
+</div>
