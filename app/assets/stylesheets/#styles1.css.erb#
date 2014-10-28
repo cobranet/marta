@@ -1,0 +1,73 @@
+@font-face {
+    font-family: lansbury;
+    src: url(/fonts/lansbury.ttf); 
+}
+
+.bnaslov h2 {
+    font-size: 5.0vmax;
+    font-family: 'lansbury';
+    src:  font-url('../fonts/lansbury.ttf') format('truetype');
+    text-align: center;
+    color: red;
+}
+
+
+.row {
+    text-align: center;
+}
+
+
+.zdravo h3 {
+    color: white;
+    font-size: 3.0vmax;
+}
+
+.main {
+
+    min-height: 600px;
+    
+}
+
+.pametni {
+    color: white;
+}
+
+#seprow1 {
+    min-height: 3.0vmax;
+}
+
+#seprow2 {
+    min-height: 3.0vmax;
+}
+
+#dlg-pic {
+    max-height: 300px;
+    max-width: auto;
+}
+
+.martabutton {
+      background: url('button_back.png') no-repeat center center;  
+      padding-top: 10px;
+      padding-bott
+      padding-bottom: 10px;
+      padding-left: 10px;
+}
+
+.bquest {
+    padding: 3px;
+}
+
+@media (min-width: 800px) {
+
+    .main {
+       background: url('<%= asset_path("konfrotacija.jpg")%>')  no-repeat center center;
+    }
+}
+
+@media (max-width:480px) {
+    .main {
+	background: url('<%= asset_path("naslovna.jpg")%>')  no-repeat center center;
+    }
+
+}
+
