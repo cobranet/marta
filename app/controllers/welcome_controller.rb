@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     @heroji = User.heroji
+    @knjige = Book.all
   end
 
   def pitanje
