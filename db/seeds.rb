@@ -7,6 +7,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Pitanje.destroy_all
+Odgovor.destroy_all
+Book.destroy_all
+                
+
 Pitanje.create([ { pitanje: "Koliko Marta ima godina?",
                    broj: 1,
                    },
@@ -39,5 +44,20 @@ Book.create([
                image: "peti_leptir-uros_petrovic_m.jpg",
                desc: "Novi roman Uroša Petrovića, poetski, humoran i mističan. Nagrada Zmajevih dečijih igara 'Rade Obrenović' za najbolji roman namenjen deci i mladima u 2007. godini.",
 
-               link: "http://www.laguna.rs/n675_knjiga_peti_leptir_laguna.html" }
+               link: "http://www.laguna.rs/n675_knjiga_peti_leptir_laguna.html" },
+
+             { naslov: "Zagonetne priče - IV",
+               image: "zagonetne_price_-_knjiga_cetvrta-uros_petrovic_m.jpg",
+               desc: "Serijal Zagonetne priče osvojio je nagradu NEVEN za najbolje knjige za decu i mlade iz oblasti popularne nauke, a dobitnik je i nagrade DOSITEJEVO PERO dečjeg žirija.",
+               link: "http://www.laguna.rs/n1053_knjiga_zagonetne_price_-_knjiga_cetvrta_laguna.html" },
+
+             { naslov: "Zagonetne priče - V",
+               image: "zagonetne_price_-_knjiga_peta-uros_petrovic_m.jpg",
+               desc: "Nove Zagonetne priče – novi izazovi za sve radoznale čitaoce. Nagrada „Dositejevo pero“ za najbolju knjigu za decu starijeg uzrasta u 2012.godini.",
+               link: "http://www.laguna.rs/n2000_knjiga_zagonetne_price_-_knjiga_peta_laguna.html" },
+             { naslov: "Aven i jazopas u zedlji Vauka",
+               image: "aven_i_jazopas-uros_petrovic_m.jpg",
+               desc: "Roman čistokrvne epske fantastike koji je otvorio novi pravac u srpskoj književnosti za decu i mlade. Proverite zašto je ova knjiga postala kultna čak i svetu odraslih!",
+               link: "http://www.laguna.rs/n357_knjiga_aven_i_jazopas_u_zemlji_vauka_laguna.html" }
+
             ]);

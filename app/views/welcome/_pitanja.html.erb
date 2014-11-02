@@ -1,11 +1,15 @@
+<% if current_user.all_answered == false  %>
 <div class="row pitanja ">
   <div class="martabutton">
     <% if current_user.tacno(1) == nil %>
-      <button id="marta" class="btn btn-lg btn-primary mbtn ">Martino pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
+    <button id="marta" class="btn btn-lg btn-primary mbtn ">Martino pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
     <% end %>
-  
+    
     <% if current_user.tacno(2) == nil %>
-      <button id="klara" class="btn btn-lg btn-primary mbtn ">Klarino  pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
+    <button id="klara" class="btn btn-lg btn-primary mbtn ">Klarino  pitanje <span class="glyphicon glyphicon-question-sign"></span></button>
     <% end %>
   </div>
 </div>
+<% else %>
+  <h1> Tačno ste odgovrili na oba pitanja. Bravo! </h1>
+<% end %>

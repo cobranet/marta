@@ -25,7 +25,9 @@ class User < ActiveRecord::Base
   def datum(d)
     d.strftime("%d/%m/%Y")
   end
-
+  def all_answered
+     tacno(1)!=nil && tacno(2) != nil
+  end
   # WHo is solve problem
   def self.heroji
     a = Aktivnost.select("user_id as user_id,max(kad) as kad").where(rez: 'ok').group("user_id").order('kad').limit(10)
@@ -47,19 +49,16 @@ class User < ActiveRecord::Base
     end
   end
   
-  def self_user_oba_tacno
-    
-  end
   
   # poruka za usera
   def poruka
     last = Aktivnost.where(user_id: self.id).order(kad: :desc).first
     if last == nil 
-      poruka = "Zdravo #{self.name}... Prvi put ste ovde da vidimo šta znate!"
+      poruka = "Zdravo #{self.name}. Prvi put ste ovde da vidimo šta znate!"
     else
       koliko =  Aktivnost.where(user_id: self.id ).count
       cijep = cije(last.pitanje)
-      poruka = "Zdravo #{self.name}. Zadnji pokušaj je bio #{datum(last.kad)} ...na #{cijep} pitanje  rekli ste #{last.odgovor}...Probali ste #{koliko} puta. "
+      poruka = "Zdravo #{self.name}. Zadnji pokušaj je bio #{datum(last.kad)} ...na #{cijep} pitanje  rekli ste #{last.odgovor}. Probali ste #{koliko} puta. "
     end
     poruka 
   end  

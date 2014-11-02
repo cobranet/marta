@@ -9,6 +9,7 @@ Upetrovic::Application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'pitanjas/:id', to: 'welcome#pitanje'
   get 'odgovor', to: 'welcome#odgovor'
+  get 'guest', to: 'sessions#guest'  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
