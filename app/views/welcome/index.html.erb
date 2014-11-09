@@ -1,32 +1,22 @@
 <div class="container">
-  <div id="toprow" class="row">     
-    <%= render partial: "toprow" %>
-  </div>
-  <div class="tab-content">
-    <div class="tab-pane active" id="tab1" >
-      <div class="row main">
-	<div class="row bnaslov">     
-	  <%= render partial: "bnaslov" %>
-	</div>
-	<div class="row">
-	  <span class="col-md-2 bleft"> 
-	  </span>
-	  <span class="col-md-8 bmiddle">
-            <%= render partial: "middlecol" %>	
-	  </span> 
-	  <span class="col-md-2 bright"> 
-	  </span> 
-	</div>
-      </div>
+  <div class="row main">
+    
+    <div class="row bnaslov">     
+      <%= render partial: "bnaslov" %>
     </div>
-
-    <div class="tab-pane" id="tab2">
-      <%= render partial: "author" %>
+    
+    <div class="row bmain">
+       <span class="col-md-2 bleft"> 
+       </span>
+    
+       <span class="col-md-8 bmiddle">
+          <%= render partial: "middlecol" %>	
+       </span> 
+        
+       <span class="col-md-2 bright">
+       </span> 
     </div>
-    <div class="tab-pane" id="tab3">
-      <%= render partial: "knjige" %>
-    </div> 	 
-
+  
   </div>
 </div>
 

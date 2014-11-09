@@ -12,10 +12,10 @@ Odgovor.destroy_all
 Book.destroy_all
                 
 
-Pitanje.create([ { pitanje: "Koliko Marta ima godina?",
+Pitanje.create([ { pitanje: "Kako glasi rešenje Martine zagonetke?",
                    broj: 1,
                    },
-                 { pitanje: "Koga briga za ovu drugu?",
+                 { pitanje: "Kako glasi rešenje Kjarine zagonetke?",
                    broj: 2}
 ])
 

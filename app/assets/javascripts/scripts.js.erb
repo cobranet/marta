@@ -1,9 +1,18 @@
-function showBadAnswer(){
+function showBadAnswer(num){
+    if ( num === 1 ){
+	showBadAnswerMarta();
+    } else 
+    { 
+	showBadAnswerKjara();
+    }
+}
+
+function showBadAnswerMarta(){
     var $textAndPic = $('<div id="dialog-body"></div>');
-        $textAndPic.append("<h2>Razmislite ponovo o pitanju!</h2><br />");
-        $textAndPic.append('<%= image_tag "mojamarta.png", :id => "dlg-pic" %>');
+        $textAndPic.append("<h2>To nije pravo rešenje!</h2><br />");
+        $textAndPic.append('<%= image_tag "marta.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
-	    title: 'Pokušajte ponovo sutradan',
+	    title: 'Obaveštenje o netačnom rešenju.',
             onshown: function(dialogRef){
 		    $('#okbutton').focus();
 		    $("#okbutton").keyup(function(event){
@@ -24,10 +33,36 @@ function showBadAnswer(){
             }]});
 };
 
-function showGoodAnswer(){
+function showBadAnswerKjara(){
     var $textAndPic = $('<div id="dialog-body"></div>');
-        $textAndPic.append("<h2>Odličan odgovor! Ne govorite priljateljima ... ne kvarite zabavu </h2><br />");
-        $textAndPic.append('<%= image_tag "mojamarta.png", :id => "dlg-pic" %>');
+        $textAndPic.append("<h2>To nije pravo rešenje!</h2><br />");
+        $textAndPic.append('<%= image_tag "kjara.png", :id => "dlg-pic" %>');
+        BootstrapDialog.show({
+	    title: 'Obaveštenje o netačnom rešenju.',
+            onshown: function(dialogRef){
+		    $('#okbutton').focus();
+		    $("#okbutton").keyup(function(event){
+			if(event.keyCode == 13){
+			    $("#okbutton").click();
+			}
+		    });
+		  },  
+	    message: $textAndPic,
+	    cssClass: 'pitdlg',
+		buttons: [{
+                    label: 'OK',
+		    id: "okbutton",
+		    cssClass: 'button  btn-lg',
+                    action: function(dialogRef){
+			dialogRef.close();
+                    }
+            }]});
+};
+
+function showGoodAnswerMarta(){
+    var $textAndPic = $('<div id="dialog-body"></div>');
+        $textAndPic.append("<h2>Bravo! To je pravo rešenje Martine Zagonetke! Čuvajte tajnu ! </h2><br />");
+        $textAndPic.append('<%= image_tag "marta.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Bravo!!',
 	    message: $textAndPic,
@@ -50,8 +85,51 @@ function showGoodAnswer(){
             }]});
 };
 
-       
-function showPitanje(num){
+function showGoodAnswer(num) {
+    if(num === 1){
+	showGoodAnswerMarta();
+    } else {
+	showGoodAnswerKjara();
+    }
+}
+
+function showGoodAnswerKjara(){
+    var $textAndPic = $('<div id="dialog-body"></div>');
+        $textAndPic.append("<h2>Bravo! To je pravo rešenje Kjarine Zagonetke! Čuvajte tajnu ! </h2><br />");
+        $textAndPic.append('<%= image_tag "kjara.png", :id => "dlg-pic" %>');
+        BootstrapDialog.show({
+	    title: 'Bravo!!',
+	    message: $textAndPic,
+            onshown: function(dialogRef){
+		    $('#okbutton').focus();
+		    $("#okbutton").keyup(function(event){
+			if(event.keyCode == 13){
+			    $("#okbutton").click();
+			}
+		    });
+		  },  
+	    cssClass: 'pitdlg',
+		buttons: [{
+                    label: 'OK',
+		    id: "okbutton",
+		    cssClass: 'button  btn-lg',
+                    action: function(dialogRef){
+			dialogRef.close();
+                    }
+            }]});
+};
+
+
+function showPitanje(num) {
+    if (num === 1 ) {
+	showPitanjeMarta(1);
+    }
+    else {
+	showPitanjeKjara(2);
+    }
+}
+
+function showPitanjeKjara(num){
     $.ajax({
 	url: '/pitanjas/' + num,
 	data: { pitanje: num },
@@ -59,10 +137,10 @@ function showPitanje(num){
 	done( function(data) {
 	    var $textAndPic = $('<div id="dialog-body"></div>');
 	    $textAndPic.append("<h2>" +data.pitanje+ '</h2><br />');
-	    $textAndPic.append('<%= image_tag "mojamarta.png", :id => "dlg-pic" %>');
+	    $textAndPic.append('<%= image_tag "kjara.png", :id => "dlg-pic" %>');
 	    $textAndPic.append('<input id="odg" class="pitanjecl form-control" type="text" name="odgovor">');
 	    BootstrapDialog.show({
-		title: 'Zagonetka',
+		title: 'Kjarina Zagonetka',
 		onshown: function(dialogRef){
 		    $('#odg').focus();
 		    $("#odg").keyup(function(event){
@@ -97,9 +175,68 @@ function showPitanje(num){
 			      }
 				
 			      if (data.rez === 'not ok'){
-				  showBadAnswer();
+				  showBadAnswer(num);
 			      } else {
-				  showGoodAnswer();
+				  showGoodAnswer(num);
+			      }
+				  
+		    });
+                    dialogRef.close();
+                    }
+            }]
+        });
+});
+        
+};
+function showPitanjeMarta(num){
+    $.ajax({
+	url: '/pitanjas/' + num,
+	data: { pitanje: num },
+	type: 'get'}).
+	done( function(data) {
+	    var $textAndPic = $('<div id="dialog-body"></div>');
+	    $textAndPic.append("<h2>" +data.pitanje+ '</h2><br />');
+	    $textAndPic.append('<%= image_tag "marta.png", :id => "dlg-pic" %>');
+	    $textAndPic.append('<input id="odg" class="pitanjecl form-control" type="text" name="odgovor">');
+	    BootstrapDialog.show({
+		title: 'Martina Zagonetka',
+		onshown: function(dialogRef){
+		    $('#odg').focus();
+		    $("#odg").keyup(function(event){
+			if(event.keyCode == 13){
+			    $("#okbutton").click();
+			}
+		    });
+		  },  
+		message: $textAndPic,
+		cssClass: 'pitdlg',
+		buttons: [{
+                    label: 'OK',
+		    id: "okbutton",
+		    cssClass: 'button  btn-lg',
+                    action: function(dialogRef){
+			$.ajax({
+			    url:'/odgovor',
+			    type: 'GET',
+			    data: { odgovor: $('#odg').val(),
+				    pitanje: num}
+			} ).
+			    done( function(data){
+			      $('#poruka').text(data.poruka);
+			      if (data.pitanje == 1 && data.rez === 'ok'){
+				  $('#pametni1').text(data.tacno);
+				  $('#marta').hide();
+				  
+			      }
+			      if (data.pitanje == 2 && data.rez === 'ok'){
+				  $('#pametni2').text(data.tacno);
+				  $('#klara').hide();
+			      }
+				
+			      if (data.rez === 'not ok'){
+				  showBadAnswer(num);
+			      } else {
+				  showGoodAnswer(num);
 			      }
 				  
 		    });

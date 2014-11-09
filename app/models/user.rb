@@ -14,16 +14,23 @@ class User < ActiveRecord::Base
     end
   end
   # Who ask question .. must be moved to database
-  def cije(broj) 
+  def self.cije(broj) 
     if  broj == 1.to_i 
        cije = " Martino " 
     else
        cije = "Kjarino" 
     end  
   end
+  def self.pitimage(broj)
+    if broj == 1.to_i
+      return "marta.png"
+    else
+      return "kjara.png"
+    end
+  end
   # format date in Serbian ?
   def datum(d)
-    d.strftime("%d/%m/%Y")
+    d.strftime("%d-%m-%Y")
   end
   def all_answered
      tacno(1)!=nil && tacno(2) != nil
@@ -45,7 +52,7 @@ class User < ActiveRecord::Base
     t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first
     a = nil 
     if t != nil
-      a= "Vi ste stvarno pametni i na #{cije(pitanje)} ste odgovorili #{datum(t.kad)}.."
+      a= "Vi ste stvarno pametni i na #{User.cije(pitanje)} ste odgovorili #{datum(t.kad)}.."
     end
   end
   
@@ -54,11 +61,11 @@ class User < ActiveRecord::Base
   def poruka
     last = Aktivnost.where(user_id: self.id).order(kad: :desc).first
     if last == nil 
-      poruka = "Zdravo #{self.name}. Prvi put ste ovde da vidimo šta znate!"
+      poruka = "Prvi put ste ovde. Dobrodošli!"
     else
       koliko =  Aktivnost.where(user_id: self.id ).count
-      cijep = cije(last.pitanje)
-      poruka = "Zdravo #{self.name}. Zadnji pokušaj je bio #{datum(last.kad)} ...na #{cijep} pitanje  rekli ste #{last.odgovor}. Probali ste #{koliko} puta. "
+      cijep = User.cije(last.pitanje)
+      poruka = "Zadnji pokušaj je bio #{datum(last.kad)} ...na #{cijep} pitanje  rekli ste #{last.odgovor}. Probali ste #{koliko} puta. "
     end
     poruka 
   end  
@@ -71,7 +78,7 @@ class User < ActiveRecord::Base
       usera = usera + 1
       odgovora = odgovora + user[:koliko]
     end  
-    n = "Do sada je pokušalo #{usera} pametnjeakovića i odgovorilo  #{odgovora} puta"
+    n = "Do sada je  #{usera} čitalaca pokušalo  #{odgovora} puta"
   end
 
   def self.delete_activity(user_id) 

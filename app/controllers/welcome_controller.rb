@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
 
   def pitanje
     br = params[:pitanje].to_i
-    render json: { pitanje: Pitanje.where(broj: br).first.pitanje }
+    render json: { pitanje: Pitanje.where(broj: br).first.pitanje,cije: User.cije(br),image: User.pitimage(br) }
   end
 
   def odgovor
