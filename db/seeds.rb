@@ -10,8 +10,9 @@
 Pitanje.destroy_all
 Odgovor.destroy_all
 Book.destroy_all
-                
+User.destroy_all                
 
+User.create([ { uid: "guest" , id: 0, uid: "guest" , name: "guest" }]) 
 Pitanje.create([ { pitanje: "Kako glasi rešenje Martine zagonetke?",
                    broj: 1,
                    },
