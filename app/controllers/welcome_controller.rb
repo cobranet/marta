@@ -3,10 +3,10 @@ class WelcomeController < ApplicationController
     @heroji = User.heroji
     @knjige = Book.all
     @session = session
-    if @session["1"] is null 
+    if @session["1"] == nil
       @session["1"] = 0
     end
-    if @session["2"] is null 
+    if @session["2"] == nil
       @session["2"] = 0
     end
 
