@@ -5,12 +5,10 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
   def guest
-    user = User.create( { provider: 'none',
-                uid: 'guest',
-                id: 0,          
-                name: 'guest' })
+    user = User.find(0)
     session[:user_id] = user.id                
-    session[:times] = 0
+    session["1"] = 0
+    session["2"] = 0
     redirect_to root_url
   end
   def destroy

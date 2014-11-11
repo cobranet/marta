@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   def index
     @heroji = User.heroji
     @knjige = Book.all
+    @session = session
   end
 
   def pitanje
@@ -15,12 +16,22 @@ class WelcomeController < ApplicationController
     
     if Odgovor.where(pitanje_id: pitanje,odgovor: odgovor).length == 0
       rez = 'not ok'
+      puts "####################################"
+      puts session[pitanje] 
+      puts "####################################"   
+      session[pitanje] = session[pitanje] + 1
     else
       rez = 'ok'
     end
+    
     Aktivnost.zabelezi(current_user.id,pitanje,odgovor,rez)
     tacno = current_user.tacno(pitanje)
     poruka = current_user.poruka
-    render json: {od: odgovor, pitanje: pitanje , rez: rez , poruka: poruka,tacno: tacno, no_more: current_user.no_more(pitanje) }
+    if current_user.no_more(pitanje) == 1 || session[pitanje] > 3 
+      nomore = 1
+    else
+      nomore = 0
+    end
+    render json: {od: odgovor, pitanje: pitanje , rez: rez , poruka: poruka,tacno: tacno, no_more: nomore}
   end 
 end
