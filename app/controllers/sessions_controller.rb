@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
                 uid: 'guest',
                 name: 'guest' })
     session[:user_id] = user.id                
+    session[:times] = 0
     redirect_to root_url
   end
   def destroy
