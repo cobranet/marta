@@ -7,25 +7,24 @@
 </div>
 
 
-<div class="row zdravo ">
-  <%= render partial: "poruka"%>
-</div> 
+<!-- <div class="row zdravo "> -->
+<!--   <%= render partial: "poruka"%> -->
+<!-- </div>  -->
 
-<%= render partial: "user_image" %>
-
+<% if current_user.is_guest? == false %> 
+  <%= render partial: "user_image" %>
+<% end %>
 
 <div id="seprow2" class="row">
 </div>
 
 <div class="row">
-<%= render partial: "pametni" %>
-
-<% if current_user %>
-  <%= render partial: "pitanja" %>  
-<% else %> 
-  <%=render partial: "facebook" %>
-<% end %> 
-
-<%= render partial: "nelogovani" %>
+  <%= render partial: "pametni" %>
+  <% if current_user %>
+    <%= render partial: "pitanja" %>  
+  <% else %> 
+    <%=render partial: "facebook" %>
+  <% end %> 
+  <%= render partial: "nelogovani" %>
 
 </div>

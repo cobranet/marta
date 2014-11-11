@@ -68,7 +68,8 @@ class User < ActiveRecord::Base
     end 
     hero
   end
-
+  
+   
   #Message for solvers
   def tacno(pitanje)
     t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first
@@ -76,6 +77,15 @@ class User < ActiveRecord::Base
     if t != nil
       a= "Vi ste stvarno pametni i na #{User.cije(pitanje)} pitanje ste odgovorili #{datum(t.kad)}.."
     end
+  
+  end
+  
+  def odgovor_kad(pitanje) 
+    t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first
+    if t != nil 
+      return "#{datum(t.kad)}"
+    end
+    return ""
   end
   
   
