@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   def guest
     user = User.create( { provider: 'none',
                 uid: 'guest',
+                id: 0,          
                 name: 'guest' })
     session[:user_id] = user.id                
     session[:times] = 0
