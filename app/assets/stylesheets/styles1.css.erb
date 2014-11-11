@@ -1,3 +1,4 @@
+html,body {height:100%;}
 @font-face {
     font-family: lansbury;
     src: url(/fonts/lansbury.ttf); 
@@ -17,6 +18,16 @@
     1px 1px 0 #000;  
 }
 
+.bnaslov h3 {
+   font-size: 2.0vmax;
+   color: #006600;
+    width: 100%;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
 
 .row {
     text-align: center;
@@ -64,75 +75,41 @@
 }
 
 
-.ulnobul {
-  list-style-type: none;
-  padding: 10px;
+.ball {
+    height: 100%;
+    border: 2px solid black;
+    background: url('<%= asset_path("blueback.jpg")%>')  no-repeat;
+    background-size: 100%;
 }
 
-@media (min-width: 800px) {
-
-    .bmain {
-       background: url('<%= asset_path("blueback.jpg")%>')  no-repeat;
+.bmain {
+ 
        background-size: 100%;       
        display: table;
-       min-width: 400px;
        width: 100%;
+       height: 100%;
     }
-    .bleft {
+
+.bleft {
        background: url('<%= asset_path("marta.png")%>')  no-repeat;
        background-size: 100%;
-       heigth: 100%;
-       min-height: 300px;
+       min-heigth: 300px;
+       height: 100%;
 
     }
 
-    .bright {
+.bright {
        background: url('<%= asset_path("kjara.png")%>')  no-repeat;
        background-size: 100%;
        heigth: 100%;
        min-height: 300px;
+       height: 100%;
 
     }
 
-    .zdravo  {
+ .zdravo  {
       color: black;
       font-size: 3.0vmax;
       text-align: center;
-}
-
-
-}
-
-@media (max-width:480px) {
-
-    .bmain {
-       background: url('<%= asset_path("blueback.jpg")%>')  no-repeat;
-       background-size: 100%;       
-       display: table;
-       min-width: 800px;
-    }
-    .bleft {
-       background: url('<%= asset_path("marta.png")%>')  no-repeat;
-       background-size: 100%;
-       heigth: 100%;
-       min-height: 300px;
-
-    }
-
-    .bright {
-       background: url('<%= asset_path("kjara.png")%>')  no-repeat;
-       background-size: 100%;
-       heigth: 100%;
-       min-height: 300px;
-
-    }
-
-    .zdravo  {
-      color: white;
-      font-size: 3.0vmax;
-      text-align: center;
-}
-
-
 }
 

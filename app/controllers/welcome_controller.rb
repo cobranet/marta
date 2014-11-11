@@ -21,6 +21,6 @@ class WelcomeController < ApplicationController
     Aktivnost.zabelezi(current_user.id,pitanje,odgovor,rez)
     tacno = current_user.tacno(pitanje)
     poruka = current_user.poruka
-    render json: {od: odgovor, pitanje: pitanje , rez: rez , poruka: poruka,tacno: tacno }
+    render json: {od: odgovor, pitanje: pitanje , rez: rez , poruka: poruka,tacno: tacno, no_more: current_user.no_more(pitanje) }
   end 
 end

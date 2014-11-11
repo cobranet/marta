@@ -61,7 +61,7 @@ function showBadAnswerKjara(){
 
 function showGoodAnswerMarta(){
     var $textAndPic = $('<div id="dialog-body"></div>');
-        $textAndPic.append("<h2>Bravo! To je pravo rešenje Martine Zagonetke! Čuvajte tajnu ! </h2><br />");
+        $textAndPic.append("<h2>Bravo!</h2><h2>To je pravo rešenje Martine Zagonetke!</h2><h2> Čuvajte tajnu ! </h2><br />");
         $textAndPic.append('<%= image_tag "marta.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Bravo!!',
@@ -172,10 +172,14 @@ function showPitanjeKjara(num){
 			      if (data.pitanje == 2 && data.rez === 'ok'){
 				  $('#pametni2').text(data.tacno);
 				  $('#klara').hide();
+				
 			      }
 				
 			      if (data.rez === 'not ok'){
 				  showBadAnswer(num);
+				  if(data.no_more  === 1 ) {
+				      $('#kjara_but').html('<button id="klara_dis" class="btn btn-lg btn-disabled mbtn ">Pokušajte sutra <span class="glyphicon glyphicon-question-sign"></span></button>');
+				  }
 			      } else {
 				  showGoodAnswer(num);
 			      }
@@ -227,6 +231,7 @@ function showPitanjeMarta(num){
 				  $('#pametni1').text(data.tacno);
 				  $('#marta').hide();
 				  
+				  
 			      }
 			      if (data.pitanje == 2 && data.rez === 'ok'){
 				  $('#pametni2').text(data.tacno);
@@ -235,6 +240,9 @@ function showPitanjeMarta(num){
 				
 			      if (data.rez === 'not ok'){
 				  showBadAnswer(num);
+				  if(data.no_more  === 1 ) {
+				      $('#marta_but').html('<button id="marta_dis" class="btn btn-lg btn-disabled mbtn ">Pokušajte sutra <span class="glyphicon glyphicon-question-sign"></span></button>');
+				  }
 			      } else {
 				  showGoodAnswer(num);
 			      }
@@ -248,7 +256,7 @@ function showPitanjeMarta(num){
         
 };
 
-  $(document).ready(function() {
+  $(document).ready(function() {  
     $('.carousel').carousel({
       interval: 0
     });
