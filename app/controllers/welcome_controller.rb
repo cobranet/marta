@@ -3,6 +3,13 @@ class WelcomeController < ApplicationController
     @heroji = User.heroji
     @knjige = Book.all
     @session = session
+    if @session["1"] is null 
+      @session["1"] = 0
+    end
+    if @session["2"] is null 
+      @session["2"] = 0
+    end
+
   end
 
   def pitanje
