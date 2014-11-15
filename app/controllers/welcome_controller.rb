@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class WelcomeController < ApplicationController
   def index
     @heroji = User.heroji
@@ -21,18 +22,20 @@ class WelcomeController < ApplicationController
     pitanje = params[:pitanje]
     odgovor = params[:odgovor]
     
-    if Odgovor.where(pitanje_id: pitanje,odgovor: odgovor).length == 0
+    if Odgovor.check(pitanje,odgovor) == false
       rez = 'not ok'
-      puts "####################################"
-      puts session[pitanje] 
-      puts "####################################"   
       session[pitanje] = session[pitanje] + 1
     else
       rez = 'ok'
     end
-    
-    Aktivnost.zabelezi(current_user.id,pitanje,odgovor,rez)
-    tacno = current_user.tacno(pitanje)
+    if current_user.is_guest? == false
+      Aktivnost.zabelezi(current_user.id,pitanje,odgovor,rez)
+    end
+    if current_user.is_guest? == false
+      tacno = current_user.tacno(pitanje)
+    else
+      tacno = "Ulogovani ste kao gost #{User.cije(pitanje.to_i)} pitanje ste rešili."
+    end
     poruka = current_user.poruka
     if current_user.no_more(pitanje) == 1 || session[pitanje] > 3 
       nomore = 1
