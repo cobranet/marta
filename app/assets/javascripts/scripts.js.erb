@@ -11,7 +11,7 @@ function showBadAnswer(num){
 function showBadAnswerMarta(){
     var $textAndPic = $('<div id="dialog-body"></div>');
         $textAndPic.append("<h2>To nije pravo rešenje!</h2><br />");
-        $textAndPic.append('<%= image_tag "marta.png", :id => "dlg-pic" %>');
+        $textAndPic.append('<%= image_tag "marta_500.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Obaveštenje o netačnom rešenju.',
             onshown: function(dialogRef){
@@ -37,7 +37,7 @@ function showBadAnswerMarta(){
 function showBadAnswerKjara(){
     var $textAndPic = $('<div id="dialog-body"></div>');
         $textAndPic.append("<h2>To nije pravo rešenje!</h2><br />");
-        $textAndPic.append('<%= image_tag "kjara.png", :id => "dlg-pic" %>');
+        $textAndPic.append('<%= image_tag "kjara_500.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Obaveštenje o netačnom rešenju.',
             onshown: function(dialogRef){
@@ -63,7 +63,7 @@ function showBadAnswerKjara(){
 function showGoodAnswerMarta(){
     var $textAndPic = $('<div id="dialog-body"></div>');
         $textAndPic.append("<h2>Bravo!</h2><h2>To je pravo rešenje Martine Zagonetke!</h2><h2> Čuvajte tajnu ! </h2><br />");
-        $textAndPic.append('<%= image_tag "marta.png", :id => "dlg-pic" %>');
+        $textAndPic.append('<%= image_tag "marta_500.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Bravo!!',
 	    message: $textAndPic,
@@ -97,7 +97,7 @@ function showGoodAnswer(num) {
 function showGoodAnswerKjara(){
     var $textAndPic = $('<div id="dialog-body"></div>');
         $textAndPic.append("<h2>Bravo! To je pravo rešenje Kjarine Zagonetke! Čuvajte tajnu ! </h2><br />");
-        $textAndPic.append('<%= image_tag "kjara.png", :id => "dlg-pic" %>');
+        $textAndPic.append('<%= image_tag "kjara_500.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Bravo!!',
 	    message: $textAndPic,
@@ -138,7 +138,7 @@ function showPitanjeKjara(num){
 	done( function(data) {
 	    var $textAndPic = $('<div id="dialog-body"></div>');
 	    $textAndPic.append("<h2>" +data.pitanje+ '</h2><br />');
-	    $textAndPic.append('<%= image_tag "kjara.png", :id => "dlg-pic" %>');
+	    $textAndPic.append('<%= image_tag "kjara_500.png", :id => "dlg-pic" %>');
 	    $textAndPic.append('<input id="odg" class="pitanjecl form-control" type="text" name="odgovor">');
 	    BootstrapDialog.show({
 		title: 'Kjarina Zagonetka',
@@ -201,7 +201,7 @@ function showPitanjeMarta(num){
 	done( function(data) {
 	    var $textAndPic = $('<div id="dialog-body"></div>');
 	    $textAndPic.append("<h2>" +data.pitanje+ '</h2><br />');
-	    $textAndPic.append('<%= image_tag "marta.png", :id => "dlg-pic" %>');
+	    $textAndPic.append('<%= image_tag "marta_500.png", :id => "dlg-pic" %>');
 	    $textAndPic.append('<input id="odg" class="pitanjecl form-control" type="text" name="odgovor">');
 	    BootstrapDialog.show({
 		title: 'Martina Zagonetka',

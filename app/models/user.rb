@@ -72,6 +72,9 @@ class User < ActiveRecord::Base
    
   #Message for solvers
   def tacno(pitanje)
+    if is_guest? == 1 
+      return nil
+    end
     t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first
     a = nil 
     if t != nil

@@ -21,13 +21,10 @@ Pitanje.create([ { pitanje: "Kako glasi rešenje Martine zagonetke?",
 ])
 
 Odgovor.create([ { pitanje_id: 1,
-                   odgovor: '12' },
-                 { pitanje_id: 1,
-                   odgovor: 'dvanest' },
+                   odgovor: 'ko0ycEluksloE' },
                  { pitanje_id: 2,
-                   odgovor: 'mene' },
-                 { pitanje_id: 2,
-                   odgovor: 'nikoga' }])
+                   odgovor: 'doEaTFl3lQqWE' }
+               ])
                
                    
 Book.create([ 
