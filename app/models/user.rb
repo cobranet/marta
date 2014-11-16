@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
     t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first
     a = nil 
     if t != nil
-      a= "Vi ste stvarno pametni i na #{User.cije(pitanje)} pitanje ste odgovorili #{datum(t.kad)}.."
+      a= "Bravo! Tačno ste odgovorili na #{User.cije(pitanje)} pitanje."
     end
   
   end
@@ -116,7 +116,7 @@ class User < ActiveRecord::Base
       usera = usera + 1
       odgovora = odgovora + user[:koliko]
     end  
-    n = "Do sada je  #{usera} čitalaca pokušalo  #{odgovora} puta"
+    n = "Do sada je  #{usera} čitalaca pokušalo  #{odgovora} puta."
   end
 
   def self.delete_activity(user_id) 

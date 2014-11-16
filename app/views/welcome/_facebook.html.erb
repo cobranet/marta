@@ -1,10 +1,10 @@
 <div class="martabutton">
   <div class="row login"> 
     <div class="col-md-6"> 
-     <%= button_to "Sign in with Facebook", "/auth/facebook",:class => "btn-lg btn-primary mbtn" %>
+     <%= button_to "Sign in with Facebook", "/auth/facebook",:class => "btn-lg btn-primary mbtn", method: "get" %>
      </div>
     <div class="col-md-6"> 
-     <%= button_to "Sign as guest", "/guest", :class => "btn-lg btn-primary mbtn" %>
+     <%= button_to "Sign as guest", "/guest", :class => "btn-lg btn-primary mbtn",method: "get"  %>
      </div>
   </div>
   

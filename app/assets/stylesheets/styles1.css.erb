@@ -10,8 +10,6 @@ html,body {
 
 .bnaslov { 
   padding: 10px;
-  background: url('<%= asset_path("konfrotacija-1.png")%>');  
-  Background-size: 100%;
   align: center;
 }
 
@@ -21,20 +19,22 @@ html,body {
     font-family: 'lansbury';
     text-align: center;
     color: #006600;
+
     width: 100%;
     font-weight: bold;
 }
 
 .bnaslov h3 {
-
-   font-size: 2.0vmax;
-   color: #006600;
+    
+    src: url(/fonts/lobster.ttf);
+    font-size: 2.0vmax;
+    color: #006600;
     width: 100%;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    /* text-shadow: */
+    /* -1px -1px 0 #000, */
+    /* 1px -1px 0 #000, */
+    /* -1px 1px 0 #000, */
+    /* 1px 1px 0 #000; */
 }
 
 .row {
@@ -119,3 +119,6 @@ html,body {
     vertical-align: center;
 }
 
+.book_naslov {
+    padding: 30px;
+}
