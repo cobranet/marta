@@ -3,20 +3,12 @@
 </div>  
 
 
-<div id="seprow1" class="row">
-</div>
 
-
-<!-- <div class="row zdravo "> -->
-<!--   <%= render partial: "poruka"%> -->
-<!-- </div> -->
 <% if current_user %> 
   <% if current_user.is_guest? == false %> 
     <%= render partial: "user_image" %>
   <% end %>
 <% end %>
-<div id="seprow2" class="row">
-</div>
 
 <div class="row">
   <%= render partial: "pametni" %>

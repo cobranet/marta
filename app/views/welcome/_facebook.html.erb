@@ -1,4 +1,11 @@
 <div class="martabutton">
-  <%= link_to "Sign in with Facebook", "/auth/facebook",:class => "btn-lg btn-primary mbtn" %>
-  <%= link_to "Sign as guest", "/guest", :class => "btn-lg btn-primary mbtn" %>
+  <div class="row login"> 
+    <div class="col-md-6"> 
+     <%= button_to "Sign in with Facebook", "/auth/facebook",:class => "btn-lg btn-primary mbtn" %>
+     </div>
+    <div class="col-md-6"> 
+     <%= button_to "Sign as guest", "/guest", :class => "btn-lg btn-primary mbtn" %>
+     </div>
+  </div>
+  
 </div>

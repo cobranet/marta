@@ -1,6 +1,6 @@
-<div class="container-fluid ball">
+<div class="container ball">
   <div class="row bmain">
-    <span class="col-md-2 bleft"> 
+    <span class="col-md-2 col-xs-0  bleft"> 
       <%= image_tag "marta_500.png",id: "mimage"  %>
     </span>
     <span class="col-md-8 bmiddle">
@@ -10,6 +10,8 @@
     <span class="col-md-2 bright">
       <%= image_tag "kjara_500.png",id: "kimage"  %>
     </span> 
+    <%= render partial: "carousel" %>
   </div>
+
 </div>
 
