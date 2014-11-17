@@ -1,16 +1,13 @@
-<div class="row book_naslov"> 
-  Da li ste se okušali i u ovim književnim avanturama?
-</div>
-<div class="row" >
-<% @knjige.each_with_index do |book,i| %>  
-  <% if i % 6 == 0 && i != 0 %>
-      </div>
-      <div class="row"> 
-  <% end %>
-  <div class="col-xs-12 col-md-2">
-    <a href=<%=book.link%>  class="thumbnail">
-      <%= image_tag book.image %> 
-    </a>
-  </div>
-<% end %>
+<div class="row books">
+   <% @knjige.each_with_index do |book,i| %>  
+     <% if i % 6 == 0 && i != 0 %>
+       </div>
+       <div class="row"> 
+     <% end %>
+     <div class="col-xs-12 col-md-2">
+       <a href="<%=book.link%>"  class="thumbnail">
+         <%= image_tag book.image %> 
+       </a>
+     </div>
+   <% end %>
 </div>
