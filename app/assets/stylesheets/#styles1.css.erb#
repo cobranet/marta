@@ -1,0 +1,144 @@
+html,body {
+  height:100%;
+  padding: 10px;
+}
+
+@font-face {
+    font-family: lansbury;
+    src: url(/fonts/lansbury.ttf); 
+}
+
+.colthum {
+    background-color:none;
+    padding: 10px;
+}
+
+.bnaslov { 
+  padding: 10px;
+  align: center;
+}
+
+.bnaslov h2  {
+
+    font-size: 5.0vmax;
+    font-family: 'lansbury';
+    text-align: center;
+    color: #006600;
+
+    width: 100%;
+    font-weight: bold;
+}
+
+.bnaslov h3 {
+    
+    src: url(/fonts/lobster.ttf);
+    font-size: 2.0vmax;
+    color: #006600;
+    width: 100%;
+    /* text-shadow: */
+    /* -1px -1px 0 #000, */
+    /* 1px -1px 0 #000, */
+    /* -1px 1px 0 #000, */
+    /* 1px 1px 0 #000; */
+}
+
+.row {
+    text-align: center;
+}
+
+
+
+.main {
+
+    min-height: 600px;
+    
+}
+
+.pametni {
+    color: black;
+}
+
+#seprow1 {
+    min-height: 3.0vmax;
+}
+
+#seprow2 {
+    min-height: 3.0vmax;
+}
+
+#dlg-pic {
+    max-height: 300px;
+    max-width: auto;
+}
+
+.martabutton {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      max-width: auto;
+      min-height: 60px;
+}
+
+.bquest {
+    padding: 3px;
+}
+
+
+.mbtn {
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+
+.page_1 {
+  height: 100%;
+
+    }
+
+.bleft {
+       min-heigth: 300px;
+       height: 100%;
+      
+    }
+
+.bright {
+       heigth: 100%;
+       min-height: 300px;
+       height: 100%;
+
+    }
+
+#mimage {
+    max-height: 30.0vmax;
+    vertical-align: center;
+}
+
+#kimage {
+    max-height: 30.0vmax;
+    vertical-align: center;
+}
+.balon img {
+    
+}
+.book_naslov {
+    padding: 30px;
+}
+
+
+
+
+video#bgvid { 
+
+position: fixed; right: 0; bottom: 0;
+
+min-width: 100%; min-height: 100%;
+
+width: auto; height: auto; z-index: -100;
+
+background: url(polina.jpg) no-repeat;
+
+background-size: cover; 
+
+}
+
