@@ -68,6 +68,8 @@ function showGoodAnswerMarta(){
 	    title: 'Bravo!!',
 	    message: $textAndPic,
             onshown: function(dialogRef){
+		    $('#bgvid')[0].play();
+		    $('#muzika')[0].play();
 		    $('#okbutton').focus();
 		    $("#okbutton").keyup(function(event){
 			if(event.keyCode == 13){
@@ -102,6 +104,8 @@ function showGoodAnswerKjara(){
 	    title: 'Bravo!!',
 	    message: $textAndPic,
             onshown: function(dialogRef){
+		    $('#bgvid')[0].play();
+		    $('#muzika')[0].play();
 		    $('#okbutton').focus();
 		    $("#okbutton").keyup(function(event){
 			if(event.keyCode == 13){
