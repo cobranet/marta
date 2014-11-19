@@ -26,11 +26,11 @@ class WelcomeController < ApplicationController
       rez = 'not ok'
       session[pitanje] = session[pitanje] + 1
     else
+      session["tacno#{pitanje}"] = 1
       rez = 'ok'
     end
-    if current_user.is_guest? == false
-      Aktivnost.zabelezi(current_user.id,pitanje,odgovor,rez)
-    end
+    Aktivnost.zabelezi(current_user.id,pitanje,odgovor,rez)
+
     if current_user.is_guest? == false
       tacno = current_user.tacno(pitanje)
     else

@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     end
   end
   def all_answered
-     tacno(1)!=nil && tacno(2) != nil
+     tacno(1)!=nil && tacno(2) != nil && is_guest? == false
   end
   
   def koliko_danas(pitanje)  
@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
    
   #Message for solvers
   def tacno(pitanje)
-    if is_guest? == 1 
+    if is_guest? 
       return nil
     end
     t = Aktivnost.where(user_id: self.id, pitanje: pitanje,rez: 'ok').first

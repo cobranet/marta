@@ -3,7 +3,11 @@ class Aktivnost < ActiveRecord::Base
     ak = Aktivnost.new
     ak.user_id = user
     ak.pitanje = pitanje
-    ak.odgovor = odgovor
+    if rez != 'ok'  
+      ak.odgovor = odgovor
+    else
+      ak.odgovor = 'tacno'
+    end
     ak.rez = rez
     ak.kad = Time.now
     ak.save!

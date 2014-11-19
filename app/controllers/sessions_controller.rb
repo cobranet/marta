@@ -11,9 +11,13 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id                
     session["1"] = 0
     session["2"] = 0
+    session["tacno1"] = 0
+    session["tacno2"] = 0
     redirect_to root_url
   end
   def destroy
+    session["1"] = 0
+    session["2"] = 0
     session[:user_id] = nil
     redirect_to root_url
   end
