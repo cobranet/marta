@@ -1,5 +1,6 @@
-<% if current_user.all_answered == false  %>
+<% if current_user.all_answered == false %>
 <div class="row pitanja ">
+  
   <div class="martabutton">
     <% if current_user.tacno(1) == nil && session["tacno1"] == 0   %>
       <div class="col-md-6" id="marta_but">
@@ -15,8 +16,7 @@
       </div>
     <% end %>
 
-    
-    <% if current_user.tacno(2) == nil && session["tacno2"] == 0   %>
+    <% if current_user.tacno(2) == nil || (session["tacno2"] == 0 || session["tacno2"] == nil)   %>
        <div class="col-md-6" id="kjara_but">
 	 <% if current_user.koliko_danas(2) < 3 && session["2"] < 3  %> 
           <button id="klara" class="btn btn-lg btn-primary mbtn ">Kjarina zagonetka <span class="glyphicon glyphicon-question-sign"></span></button>
@@ -33,5 +33,5 @@
   </div>
 </div>
 <% else %>
-  <h1>Bravo! Rešili ste obe zagonetke!!!<br/><small>Pošaljite svoje podatke na upetrovic@hotmail.com</small></h1>
+  <h3>Bravo! Rešili ste obe zagonetke!!!<br/>Pošaljite svoje podatke na upetrovic@hotmail.com</h3>
 <% end %>

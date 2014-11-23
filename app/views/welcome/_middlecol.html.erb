@@ -11,8 +11,8 @@
 <% end %>
 
 <div class="row">
-  <%= render partial: "pametni" %>
   <% if current_user %>
+    <%= render partial: "pametni" %>
     <%= render partial: "pitanja" %>  
   <% else %> 
     <%=render partial: "facebook" %>
