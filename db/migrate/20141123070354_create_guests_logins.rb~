@@ -1,0 +1,8 @@
+class CreateGuestsLogins < ActiveRecord::Migration
+  def change
+    create_table :guests_logins do |t|
+
+      t.timestamps
+    end
+  end
+end

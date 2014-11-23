@@ -13,6 +13,9 @@ class SessionsController < ApplicationController
     session["2"] = 0
     session["tacno1"] = 0
     session["tacno2"] = 0
+    gl = GuestsLogin.new
+    gl.remote_ip = request.remote_ip
+    gl.save!
     redirect_to root_url
   end
   def destroy

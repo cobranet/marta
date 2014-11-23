@@ -62,7 +62,7 @@ function showBadAnswerKjara(){
 
 function showGoodAnswerMarta(){
     var $textAndPic = $('<div id="dialog-body"></div>');
-        $textAndPic.append("<h2>Bravo!</h2><h2>To je pravo rešenje Martine Zagonetke!</h2><h2> Čuvajte tajnu ! </h2><br />");
+        $textAndPic.append("<h2>Bravo!</h2><h2>To je pravo rešenje Martine zagonetke!</h2><h2> Čuvajte tajnu ! </h2><br />");
         $textAndPic.append('<%= image_tag "marta_500.png", :id => "dlg-pic" %>');
         BootstrapDialog.show({
 	    title: 'Bravo!!',
@@ -98,7 +98,7 @@ function showGoodAnswer(num) {
 
 function showGoodAnswerKjara(){
     var $textAndPic = $('<div id="dialog-body"></div>');
-        $textAndPic.append("<h2>Bravo! To je pravo rešenje Kjarine Zagonetke! Čuvajte tajnu ! </h2><br />");
+        $textAndPic.append("<h2>Bravo! To je pravo rešenje Kjarine zagonetke! Čuvajte tajnu ! </h2><br />");
         $textAndPic.append('<%= image_tag "kjara_500.png", :id => "dlg-pic",:class => "kjaradlg"  %><div class="clear"></div>');
         BootstrapDialog.show({
 	    title: 'Bravo!!',
@@ -145,7 +145,7 @@ function showPitanjeKjara(num){
 	    $textAndPic.append('<%= image_tag "kjara_500.png", :id => "dlg-pic", :class => "kjaradlg"  %>');
 	    $textAndPic.append('<input id="odg" class="pitanjecl form-control" type="text" name="odgovor">');
 	    BootstrapDialog.show({
-		title: 'Kjarina Zagonetka',
+		title: 'Kjarina zagonetka',
 		onshown: function(dialogRef){
 		    $('#odg').focus();
 		    $("#odg").keyup(function(event){
@@ -208,7 +208,7 @@ function showPitanjeMarta(num){
 	    $textAndPic.append('<%= image_tag "marta_500.png", :id => "dlg-pic" %>');
 	    $textAndPic.append('<input id="odg" class="pitanjecl form-control" type="text" name="odgovor">');
 	    BootstrapDialog.show({
-		title: 'Martina Zagonetka',
+		title: 'Martina zagonetka',
 		onshown: function(dialogRef){
 		    $('#odg').focus();
 		    $("#odg").keyup(function(event){

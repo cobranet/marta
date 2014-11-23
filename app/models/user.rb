@@ -57,6 +57,7 @@ class User < ActiveRecord::Base
     end  
     return 0
   end
+
   # WHo is solve problem
   def self.heroji
     a = Aktivnost.select("user_id as user_id,max(kad) as kad").where(rez: 'ok').group("user_id").order('kad').limit(10)
@@ -106,17 +107,24 @@ class User < ActiveRecord::Base
       poruka = "Zadnji pokušaj je bio #{datum(last.kad)} ...na #{cijep} pitanje  rekli ste #{last.odgovor}. Probali ste #{koliko} puta. A danas #{koliko_danas(1)} puta na Martino a #{koliko_danas(2)} na Kjarino pitanje"
     end
     poruka 
+  end 
+  #guest logins 
+  
+  def self.how_many_guests 
+    guest = GuestsLogin.find_by_sql("select count(1) as koliko from guests_logins")
+    guest.first.koliko
   end  
   # poruka za nelogovane 
   def self.nelogovan 
     odgovora = 0
     usera = 0
+    guests = how_many_guests
     koliko = Aktivnost.select("user_id as user_id,count(kad) as koliko").group("user_id")
     koliko.each do |user|          
       usera = usera + 1
       odgovora = odgovora + user[:koliko]
     end  
-    n = "Do sada je  #{usera} čitalaca pokušalo  #{odgovora} puta."
+    n = "Do sada je  #{usera+guests} čitalaca pokušalo  #{odgovora} puta."
   end
 
   def self.delete_activity(user_id) 
