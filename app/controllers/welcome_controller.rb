@@ -30,10 +30,21 @@ class WelcomeController < ApplicationController
       rez = 'ok'
     end
     Aktivnost.zabelezi(current_user.id,pitanje,odgovor,rez)
-
+   
     if current_user.is_guest? == false
       tacno = current_user.tacno(pitanje)
+      if  current_user.all_answered 
+        oba = "1"
+      else
+        oba = "0"
+      end  
+       
     else
+      if session["tacno1"] == 1 && session["tacno2"] == 1 
+        oba = "1"
+      else
+        oba = "0"
+      end 
       tacno = "Ulogovani ste kao gost #{User.cije(pitanje.to_i)} pitanje ste rešili."
     end
     poruka = current_user.poruka
@@ -42,6 +53,6 @@ class WelcomeController < ApplicationController
     else
       nomore = 0
     end
-    render json: {od: odgovor, pitanje: pitanje , rez: rez , poruka: poruka,tacno: tacno, no_more: nomore}
+    render json: {od: odgovor, pitanje: pitanje , rez: rez , poruka: poruka,tacno: tacno, no_more: nomore,oba: oba}
   end 
 end
