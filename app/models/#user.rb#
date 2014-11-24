@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     end
   end
   def all_answered
-     tacno(1)!=nil && tacno(2) != nil 
+     (tacno(1)!=nil && tacno(2) != nil) || 
   end
   
   def koliko_danas(pitanje)  
