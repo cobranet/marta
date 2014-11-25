@@ -180,6 +180,7 @@ function showPitanjeKjara(num){
 			      }
 			      if (data.oba === "1"  && data.rez === "ok" ){ 
 				       $('#pametni1').html("<h3>Bravo! Rešili ste obe zagonetke!!!<br/>Pošaljite svoje podatke na upetrovic@hotmail.com</h3>");
+				       $('#pametni2').hide();
                                   }
 	
 			      if (data.rez === 'not ok'){
@@ -233,20 +234,30 @@ function showPitanjeMarta(num){
 				    pitanje: num}
 			} ).
 			    done( function(data){
+
+				
 			      $('#poruka').text(data.poruka);
 			      if (data.pitanje == 1 && data.rez === 'ok'){
-				  $('#pametni1').text(data.tacno);
+			          if (data.oba === "1" && data.rez === "ok" ){ 
+				      $('#pametni1').html("<h3>Bravo! Rešili ste obe zagonetke!!!<br/>Pošaljite svoje podatke na upetrovic@hotmail.com</h3>");
+				      $('#pametni2').hide();
+                                  }
+                                  else {
+				      $('#pametni1').text(data.tacno);
+                                  }
 				  $('#marta').hide();
 			      }
 
 			      if (data.pitanje == 2 && data.rez === 'ok'){
-				  $('#pametni2').text(data.tacno);
+			          if (data.oba === "1" && data.rez === "ok" ){ 
+				       $('#pametni2').html("<h3>Bravo! Rešili ste obe zagonetke!!!<br/>Pošaljite svoje podatke na upetrovic@hotmail.com</h3>");
+				       $('#pametni1').hide();
+                                  } else {
+                         	       $('#pametni2').text(data.tacno);
+                                  }
 				  $('#klara').hide();
 			      }
 
-			      if (data.oba === "1" && data.rez === "ok" ){ 
-				       $('#pametni1').html("<h3>Bravo! Rešili ste obe zagonetke!!!<br/>Pošaljite svoje podatke na upetrovic@hotmail.com</h3>");
-                                  }
 	
 				
 			      if (data.rez === 'not ok'){

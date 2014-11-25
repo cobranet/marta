@@ -12,6 +12,8 @@ Odgovor.destroy_all
 Book.destroy_all
 User.destroy_all                
 Aktivnost.destroy_all
+User.destroy_all
+GuestsLogin.destroy_all
 
 User.create([ { uid: "guest" , id: 0, uid: "guest" , name: "guest" }]) 
 Pitanje.create([ { pitanje: "Kako glasi rešenje Martine zagonetke?",
@@ -21,10 +23,10 @@ Pitanje.create([ { pitanje: "Kako glasi rešenje Martine zagonetke?",
                    broj: 2}
 ])
 
-Odgovor.create([ { pitanje_id: 1,
-                   odgovor: 'ko0ycEluksloE' },
-                 { pitanje_id: 2,
-                   odgovor: 'doEaTFl3lQqWE' }
+Odgovor.create([ { pitanje_id: 2,
+                   odgovor: 'So0SXYgKseNT6' },
+                 { pitanje_id: 1,
+                   odgovor: 'SoWBv31If/J7c' }
                ])
                
                    
